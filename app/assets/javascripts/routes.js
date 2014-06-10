@@ -1,4 +1,4 @@
-Blog.Router.reopen({
-    location: 'history',
-    rootURL: '/'
-})
+// Blog.Router.reopen({
+//     location: 'history',
+//     rootURL: '/'
+// })
