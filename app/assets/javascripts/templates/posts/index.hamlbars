@@ -1,1 +1,5 @@
 posts index
+
+%ul
+  = hb 'each' do
+    %li= hb 'title'

@@ -1,6 +1,6 @@
-Blog.PostRoute = Ember.Route.extend({
+Blog.PostsRoute = Ember.Route.extend({
     model: function() {
-        console.log(this.store)
+        console.log(this.store, '================')
         return this.store.findAll('post');
     }
 })

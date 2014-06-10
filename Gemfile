@@ -5,6 +5,7 @@ gem 'rails', '4.0.4'
 gem 'mysql2'
 gem 'handlebars_assets'
 gem 'haml'
+gem 'hamlbars', '~> 2.1'
 
 group :assets do
   gem 'sass-rails', '~> 4.0.3'
