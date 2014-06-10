@@ -1,0 +1,21 @@
+{
+    "name": "blog",
+    "version": "0.0.1",
+    "homepage": "https://github.com/doandose/blog",
+    "authors": [
+        "Adriano Tadao <drianotadao@gmail.com>"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "vendor/assets/javascripts",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "jquery": "2.1.1",
+        "ember": "1.5.1"
+    }
+}
