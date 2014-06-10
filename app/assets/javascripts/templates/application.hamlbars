@@ -1,0 +1,9 @@
+%header
+  Header
+  {{#link-to 'posts.index'}} Posts {{/link-to}}
+
+#container
+  {{ outlet }}
+
+%footer
+  Footer
