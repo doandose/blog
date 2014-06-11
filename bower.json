@@ -3,7 +3,8 @@
     "version": "0.0.1",
     "homepage": "https://github.com/doandose/blog",
     "authors": [
-        "Adriano Tadao <drianotadao@gmail.com>"
+        "Adriano Tadao Sabadini Matsumoto <adriano.tadao@gmail.com>",
+        "Saulo da Silva Santiago <saulodasilvasantiago@gmail.com>"
     ],
     "license": "MIT",
     "ignore": [

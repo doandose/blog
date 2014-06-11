@@ -15,4 +15,8 @@ Blog::Application.routes.draw do
     root to: 'application#index'
     get '*path' => 'application#index'
   end
+
+  constraints FormatTest.new(:json) do
+    resources :posts, only: [:index, :show]
+  end
 end

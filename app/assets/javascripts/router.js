@@ -5,6 +5,6 @@ Blog.Router.reopen({
 
 Blog.Router.map(function() {
     this.resource('posts', function() {
-        this.route('show', {path: ':id'})
+        this.route('show', {path: ':slug'})
     })
 })

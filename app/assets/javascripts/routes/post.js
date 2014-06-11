@@ -6,10 +6,10 @@ Blog.PostsIndexRoute = Ember.Route.extend({
 
 Blog.PostsShowRoute = Ember.Route.extend({
   	model: function(params){
-    	return this.store.find('post', params.id)
+    	return this.store.find('post', params.slug)
   	},
 
   	serialize: function(model, params){
-  		return {id: model.get('slug')}
+  		return { slug: model.get('slug') }
   	}
 })

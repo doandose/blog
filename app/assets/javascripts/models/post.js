@@ -10,16 +10,3 @@ Blog.Post = DS.Model.extend({
         }
     })
 })
-
-
-Blog.Post.FIXTURES = [{
-    id: 1,
-    title: 'foo',
-    slug: 'foo',
-    createdAt: new Date()
-}, {
-    id: 2,
-    title: 'bar',
-    slug: 'bar',
-    createdAt: new Date()
-}]
