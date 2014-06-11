@@ -5,10 +5,6 @@ Blog.Router.reopen({
 
 Blog.Router.map(function() {
     this.resource('posts', function() {
-        this.route('index', {path: ''})
-    })
-
-    this.resource('posts', function() {
-        this.route('show', {path: ':slug'})
+        this.route('show', {path: ':id'})
     })
 })

@@ -1,6 +1,6 @@
 %header
   Header
-  {{#link-to 'posts.index'}} Posts {{/link-to}}
+  {{#link-to 'posts'}} Posts {{/link-to}}
 
 #container
   {{ outlet }}
