@@ -1,10 +1,10 @@
-Blog.PostsIndexRoute = Ember.Route.extend({
-	model: function(){
-    	return this.store.findAll('post')
-  	}
+Blog.PostsRoute = Ember.Route.extend({
+  model: function(){
+    return this.store.findAll('post')
+  }
 })
 
-Blog.PostsShowRoute = Ember.Route.extend({
+Blog.PostsShowRoute = Blog.PostsRoute.extend({
   	model: function(params){
     	return this.store.find('post', params.slug)
   	},
