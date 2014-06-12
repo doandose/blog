@@ -1,10 +1,10 @@
 Blog.Router.reopen({
-    location: 'history',
-    rootURL: '/'
+	location: 'history',
+	rootURL: '/'
 })
 
 Blog.Router.map(function() {
-    this.resource('posts', function() {
-        this.route('show', {path: ':slug'})
-    })
+	this.resource('posts', function() {
+		this.route('show', {path: ':slug'})
+	})
 })

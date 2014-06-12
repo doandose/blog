@@ -1,5 +1,4 @@
-// Blog.ApplicationAdapter = DS.FixtureAdapter.extend();
 Blog.Store = DS.Store.extend({
-  revision: 12,
-  adapter: DS.RESTAdapter.create({ bulkCommmit: false })
+	revision: 12,
+	adapter: DS.RESTAdapter.create({bulkCommmit: false})
 })
