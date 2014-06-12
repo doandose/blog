@@ -3,7 +3,8 @@
     "version": "0.0.1",
     "homepage": "https://github.com/doandose/blog",
     "authors": [
-        "Adriano Tadao <drianotadao@gmail.com>"
+        "Adriano Tadao Sabadini Matsumoto <adriano.tadao@gmail.com>",
+        "Saulo da Silva Santiago <saulodasilvasantiago@gmail.com>"
     ],
     "license": "MIT",
     "ignore": [
@@ -16,6 +17,7 @@
     ],
     "dependencies": {
         "jquery": "2.1.1",
-        "ember": "1.5.1"
+        "ember": "1.5.1",
+        "ember-data": "~1.0.0-beta.8"
     }
 }

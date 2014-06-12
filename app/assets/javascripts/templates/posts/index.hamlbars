@@ -1,0 +1,7 @@
+posts index
+
+%ul
+  = hb 'each' do
+    %li
+      = hb "link-to 'posts.show' this" do
+        = hb 'title'
