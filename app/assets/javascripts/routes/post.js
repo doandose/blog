@@ -4,15 +4,8 @@ Blog.PostsRoute = Ember.Route.extend({
 	}
 })
 
-Blog.PostsShowRoute = Blog.PostsRoute.extend({
-	model: function(params){
-    console.log(params.slug)
-    window.foo = this
-    window.slug = params.slug
-		// return this.store.find('post', params.slug)
-	},
-
-	serialize: function(model, params){
-		return { slug: model.get('slug') }
+Blog.PostsShowRoute = Ember.Route.extend({
+	model: function(params) {
+    return this.modelFor('posts').findBy('slug', params.slug)
 	}
 })
