@@ -9,7 +9,6 @@ gem 'haml', '4.0.5'
 gem 'hamlbars', '~> 2.1'
 
 gem 'friendly_id', '~> 5.0.0'
-gem 'paperclip', '4.1.1'
 
 group :assets do
   gem 'sass-rails', '~> 4.0.3'

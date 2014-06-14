@@ -1,19 +1,36 @@
 # author
 2.times do
-  Author.create(name: Faker.Name.name)
+  Author.create(name: Faker::Name.name, email: Faker::Internet.email)
 end
 
 # categories
 10.times do
-  Category.create(title: Faker::Lorem.characters(8))
+  Category.create(title: Faker::Lorem.sentence(2, true, 1))
 end
 
 # tags
 10.times do
-  Tag.create(name: Faker::Lorem.characters(5))
+  Tag.create(name: Faker::Lorem.sentence(6))
 end
 
 # posts
 10.times do
-  Post.create(published_at: [nil, Date.now].sample, title: Faker::Lorem.characters(10), body: Faker::Lorem.sentence(3, true, 6), author: Author.all.sample)
+  Post.create(
+    published_at: [nil, DateTime.now].sample,
+    title:        Faker::Lorem.sentence(6),
+    body:         Faker::Lorem.sentence(3, true, 6),
+    author:       Author.all.sample,
+    categories:   Category.all.sample(2),
+    tags:         Tag.all.sample(5)
+  )
+end
+
+# comments
+10.times do
+  Comment.create(
+    published: [false, true].sample,
+    email: Faker::Internet.email,
+    body: Faker::Lorem.sentence(2),
+    post: Post.all.sample
+  )
 end
