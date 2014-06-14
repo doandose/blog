@@ -1,2 +1,4 @@
-Show!
-= hb 'title'
+= hb 'createdAt'
+
+%h1= hb 'title'
+%p= hb 'body'
