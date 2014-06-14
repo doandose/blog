@@ -11,22 +11,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140610223001) do
+ActiveRecord::Schema.define(version: 7) do
+
+  create_table "authors", force: true do |t|
+    t.string "name"
+    t.string "email"
+  end
 
   create_table "categories", force: true do |t|
     t.string "title"
     t.string "slug"
   end
 
-  create_table "comments", force: true do |t|
-    t.text "content"
+  create_table "categories_posts", id: false, force: true do |t|
+    t.integer "category_id"
+    t.integer "post_id"
   end
+
+  add_index "categories_posts", ["category_id"], name: "index_categories_posts_on_category_id", using: :btree
+  add_index "categories_posts", ["post_id"], name: "index_categories_posts_on_post_id", using: :btree
+
+  create_table "comments", force: true do |t|
+    t.boolean "published"
+    t.string  "email"
+    t.text    "body"
+    t.integer "post_id"
+  end
+
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "title"
     t.string   "slug"
+    t.text     "body"
+    t.integer  "author_id"
+    t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  add_index "posts", ["author_id", "published_at"], name: "index_posts_on_author_id_and_published_at", using: :btree
+  add_index "posts", ["author_id"], name: "index_posts_on_author_id", using: :btree
+  add_index "posts", ["published_at"], name: "index_posts_on_published_at", using: :btree
+  add_index "posts", ["slug"], name: "index_posts_on_slug", using: :btree
+
+  create_table "posts_tags", id: false, force: true do |t|
+    t.integer "post_id"
+    t.integer "tag_id"
+  end
+
+  add_index "posts_tags", ["post_id"], name: "index_posts_tags_on_post_id", using: :btree
+  add_index "posts_tags", ["tag_id"], name: "index_posts_tags_on_tag_id", using: :btree
+
+  create_table "tags", force: true do |t|
+    t.string "name"
   end
 
 end
