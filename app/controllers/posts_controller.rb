@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    render json: Post.published, status: :ok
+    render json: Post.published.recent, status: :ok
   end
 
   def show

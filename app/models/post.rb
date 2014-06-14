@@ -9,5 +9,6 @@ class Post < ActiveRecord::Base
   belongs_to :author
 
   # scope
+  scope :recent, -> { order(:published_at) }
   scope :published, -> { where.not(published_at: nil) }
 end
