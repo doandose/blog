@@ -4,7 +4,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    post = Post.friendly.find(params[:id])
     render json: post, status: :ok
   end
 end

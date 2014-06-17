@@ -2,3 +2,10 @@
 
 %h1= hb 'title'
 %p= hb 'body'
+
+%h2 Tags
+%ul
+  = hb 'each tags' do
+
+    %li
+      = hb 'tag.name'
