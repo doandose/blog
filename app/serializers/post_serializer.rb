@@ -1,3 +1,6 @@
 class PostSerializer < ActiveModel::Serializer
-  attributes :title, :body, :author, :created_at, :slug, :tags
+	embed :ids
+
+  attributes :title, :body, :author, :created_at, :slug
+  has_many :tags
 end
