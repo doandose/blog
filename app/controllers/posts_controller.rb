@@ -1,9 +1,11 @@
 class PostsController < ApplicationController
   def index
-    render json: Post.published.recent, status: :ok
+    posts = Post.published.recent.includes(:tags)
+    render json: posts, status: :ok
   end
 
   def show
-    render json: post, status: :ok
+    post = Post.friendly.find(params[:id])
+    render json: {post: post, tags: post.tags}, status: :ok
   end
 end

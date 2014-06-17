@@ -1,5 +1,7 @@
+Blog.AppSerializer = DS.RESTSerializer.extend()
+
 Blog.Adapter = DS.RESTAdapter.extend({
-    serializer: DS.RESTSerializer.create()
+    serializer: Blog.AppSerializer.create()
 });
 
 Blog.ApplicationStore = DS.Store.extend({

@@ -4,7 +4,5 @@ Blog.Post = DS.Model.extend({
     title: DS.attr('string'),
     body: DS.attr('string'),
     createdAt: DS.attr('string'),
-    tags: DS.hasMany('tag', {
-        async: true
-    })
+    tags: DS.hasMany('tag'),
 })

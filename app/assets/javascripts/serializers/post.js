@@ -1,7 +1,2 @@
-Blog.PostSerializer = DS.ActiveModelSerializer.extend(DS.EmbeddedRecordsMixin, {
-    attrs: {
-        tags: {
-            embedded: 'always'
-        }
-    }
-})
+Blog.PostSerializer = DS.ActiveModelSerializer.extend(DS.EmbeddedRecordsMixin)
+Blog.TagSerializer = DS.RESTSerializer.extend()

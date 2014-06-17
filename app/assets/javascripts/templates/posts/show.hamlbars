@@ -5,7 +5,7 @@
 
 %h2 Tags
 %ul
-  = hb 'each tags' do
+  = hb 'each tag in tags' do
 
     %li
       = hb 'tag.name'
