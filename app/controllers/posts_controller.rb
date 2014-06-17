@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    posts = Post.published.recent.includes(:tags)
+    posts = Post.published.recent
     render json: posts, status: :ok
   end
 
