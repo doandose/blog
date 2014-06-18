@@ -1,5 +1,13 @@
 %h1= hb 'title'
-%p= hb 'createdAt'
+
+%section.info
+  %p= hb 'createdAt'
+
+  %p= hb 'author.name'
+  %p= hb 'author.email'
+  %img{ bind: { src: "author.avatar"}}
+
+
 %p= hb 'body'
 
 %h2 Tags
@@ -8,7 +16,6 @@
 
     %li
       = hb 'tag.name'
-
 
 %h2 Comments
 %ul
