@@ -1,6 +1,5 @@
-= hb 'createdAt'
-
 %h1= hb 'title'
+%p= hb 'createdAt'
 %p= hb 'body'
 
 %h2 Tags

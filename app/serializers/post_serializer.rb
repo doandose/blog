@@ -4,4 +4,5 @@ class PostSerializer < ActiveModel::Serializer
   attributes :id, :title, :body, :author, :created_at, :slug
 
   has_many :tags, serializer: TagSerializer
+  has_many :comments, serializer: CommentSerializer
 end
