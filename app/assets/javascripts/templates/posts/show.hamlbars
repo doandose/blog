@@ -1,2 +1,27 @@
-Show!
-= hb 'title'
+%h1= hb 'title'
+
+%section.info
+  %p= hb 'createdAt'
+
+  %p= hb 'author.name'
+  %p= hb 'author.email'
+  %img{ bind: { src: "author.avatar"}}
+
+
+%p= hb 'body'
+
+%h2 Tags
+%ul
+  = hb 'each tag in tags' do
+
+    %li
+      = hb 'tag.name'
+
+%h2 Comments
+%ul
+  = hb 'each comment in comments' do
+
+    %li
+      %img{ bind: { src: "comment.avatar"}}
+      = hb 'comment.email'
+      = hb 'comment.body'

@@ -1,0 +1,1 @@
+Blog.PostSerializer = DS.ActiveModelSerializer.extend(DS.EmbeddedRecordsMixin)

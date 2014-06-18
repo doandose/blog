@@ -1,9 +1,9 @@
 class PostSerializer < ActiveModel::Serializer
-  attributes :title, :body, :author, :tags
+  embed :ids, include: true
 
-  has_many :comments
+  attributes :id, :title, :body, :created_at, :slug, :category_id, :author
 
-  def comments
-    object.comments.published
-  end
+  has_many :tags, serializer: TagSerializer
+  has_many :comments, serializer: CommentSerializer
+  has_one :author, serializer: AuthorSerializer
 end

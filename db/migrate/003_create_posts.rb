@@ -4,8 +4,9 @@ class CreatePosts < ActiveRecord::Migration
       t.string :title
       t.string :slug
       t.text :body
-      t.references :author
       t.datetime :published_at
+      t.references :author
+      t.references :category
       t.timestamps
     end
 
@@ -13,5 +14,6 @@ class CreatePosts < ActiveRecord::Migration
     add_index :posts, :slug
     add_index :posts, :published_at
     add_index :posts, :author_id
+    add_index :posts, :category_id
   end
 end

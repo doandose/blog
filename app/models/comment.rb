@@ -1,4 +1,6 @@
 class Comment < ActiveRecord::Base
+  include Imageable
+
   # relationship
   belongs_to :post
 
