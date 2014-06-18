@@ -23,14 +23,6 @@ ActiveRecord::Schema.define(version: 7) do
     t.string "slug"
   end
 
-  create_table "categories_posts", id: false, force: true do |t|
-    t.integer "category_id"
-    t.integer "post_id"
-  end
-
-  add_index "categories_posts", ["category_id"], name: "index_categories_posts_on_category_id", using: :btree
-  add_index "categories_posts", ["post_id"], name: "index_categories_posts_on_post_id", using: :btree
-
   create_table "comments", force: true do |t|
     t.boolean "published"
     t.string  "email"
@@ -44,14 +36,16 @@ ActiveRecord::Schema.define(version: 7) do
     t.string   "title"
     t.string   "slug"
     t.text     "body"
-    t.integer  "author_id"
     t.datetime "published_at"
+    t.integer  "author_id"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "posts", ["author_id", "published_at"], name: "index_posts_on_author_id_and_published_at", using: :btree
   add_index "posts", ["author_id"], name: "index_posts_on_author_id", using: :btree
+  add_index "posts", ["category_id"], name: "index_posts_on_category_id", using: :btree
   add_index "posts", ["published_at"], name: "index_posts_on_published_at", using: :btree
   add_index "posts", ["slug"], name: "index_posts_on_slug", using: :btree
 
