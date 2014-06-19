@@ -3,7 +3,7 @@ class PostSerializer < ActiveModel::Serializer
 
   attributes :id, :title, :body, :published_at, :slug, :category_id, :author
 
-  has_many :tags, serializer: TagSerializer
-  has_many :comments, serializer: CommentSerializer
-  has_one :author, serializer: AuthorSerializer
+  has_many :tags
+  has_many :comments
+  has_one :author
 end

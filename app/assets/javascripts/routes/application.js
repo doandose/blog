@@ -1,8 +1,8 @@
 Blog.ApplicationRoute = Ember.Route.extend({
     model: function() {
         return Ember.RSVP.hash({
-            categories: this.store.findAll('category'),
-            posts: this.store.findAll('post')
+            posts: this.store.findAll('post'),
+            categories: this.store.findAll('category')
         });
     },
 

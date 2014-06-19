@@ -6,7 +6,6 @@ Blog.PostsIndexRoute = Ember.Route.extend({
 
 Blog.PostsShowRoute = Ember.Route.extend({
     model: function(params) {
-        window.foo = this.store.all('post').findBy('slug', params.slug);
         return this.store.all('post').findBy('slug', params.slug)
     },
 

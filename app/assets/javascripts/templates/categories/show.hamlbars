@@ -1,0 +1,4 @@
+%h1
+  = hb 'title'
+
+= hb "render 'posts/posts' posts"
