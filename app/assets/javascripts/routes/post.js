@@ -7,13 +7,15 @@ Blog.PostsRoute = Ember.Route.extend({
     },
 
     renderTemplate: function(controller, model) {
-      this.render('categories.index', { outlet: 'menu' })
+        this.render('categories.index', {
+            outlet: 'menu'
+        })
     }
 })
 
 Blog.PostsShowRoute = Ember.Route.extend({
     model: function(params) {
-        return this.modelFor('posts').findBy('slug', params.slug)
+        return this.modelFor('posts').posts.findBy('slug', params.slug)
     },
 
     serialize: function(model, params) {
