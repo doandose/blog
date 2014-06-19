@@ -1,21 +1,12 @@
-Blog.PostsRoute = Ember.Route.extend({
+Blog.PostsIndexRoute = Ember.Route.extend({
     model: function() {
-        return Ember.RSVP.hash({
-            categories: this.store.findAll('category'),
-            posts: this.store.findAll('post')
-        });
-    },
-
-    renderTemplate: function(controller, model) {
-        this.render('categories.index', {
-            outlet: 'menu'
-        })
+        return this.store.all('post')
     }
 })
 
 Blog.PostsShowRoute = Ember.Route.extend({
     model: function(params) {
-        return this.modelFor('posts').posts.findBy('slug', params.slug)
+        return this.store.all('post').findBy('slug', params.slug)
     },
 
     serialize: function(model, params) {

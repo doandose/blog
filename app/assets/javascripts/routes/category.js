@@ -1,5 +1,11 @@
-Blog.CategoriesRoute = Ember.Route.extend({
+Blog.PostsIndexRoute = Ember.Route.extend({
     model: function() {
-      return this.store.findAll('category')
+        return this.store.all('category')
+    }
+})
+
+Blog.CategoriesShowRoute = Ember.Route.extend({
+    model: function() {
+        return this.store.all('category')
     }
 })

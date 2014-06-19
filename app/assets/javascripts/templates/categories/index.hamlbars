@@ -5,5 +5,5 @@
 
   = hb 'each category in categories' do
     %li
-      = hb "link-to 'categories.show' this" do
+      = hb "link-to 'categories.show' category" do
         = hb 'category.title'
