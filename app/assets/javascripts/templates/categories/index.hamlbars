@@ -1,0 +1,9 @@
+%ul
+  %li
+    = hb "link-to 'posts'" do
+      Home
+
+  = hb 'each category in categories' do
+    %li
+      = hb "link-to 'categories.show' this" do
+        = hb 'category.title'

@@ -1,7 +1,7 @@
 class CategorySerializer < ActiveModel::Serializer
-  embed :ids, include: true
+  embed :ids
 
   attributes :id, :title, :slug
 
-  has_many :posts, serializer: PostSerializer
+  has_many :posts
 end

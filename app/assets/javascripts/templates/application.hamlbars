@@ -1,6 +1,5 @@
 %header
-  = hb "link-to 'posts'" do
-    Home
+  {{ outlet menu }}
 
 #container
   {{ outlet }}

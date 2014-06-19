@@ -1,7 +1,7 @@
 posts index
 
 %ul
-  = hb 'each' do
+  = hb 'each post in posts' do
     %li
-      = hb "link-to 'posts.show' this" do
-        = hb 'title'
+      = hb "link-to 'posts.show' post" do
+        = hb 'post.title'
