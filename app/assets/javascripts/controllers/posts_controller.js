@@ -4,9 +4,12 @@ Blog.PostsIndexController = Ember.ArrayController.extend({
 });
 
 Blog.PostsShowController = Ember.ObjectController.extend({
-    format: "DD/MM/YYYY",
+    commentsCount: Ember.computed.alias('comments.length'),
+    format: "LL",
 
     formattedDate: function() {
+        moment.lang('pt-br');
+
         var date = this.get('publishedAt'),
             format = this.get('format');
 

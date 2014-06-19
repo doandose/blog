@@ -18,6 +18,8 @@
       = hb 'tag.name'
 
 %h2 Comments
+= hb 'commentsCount'
+
 %ul
   = hb 'each comment in comments' do
 
