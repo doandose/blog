@@ -9,7 +9,7 @@ Blog.ApplicationRoute = Ember.Route.extend({
     renderTemplate: function(controller, model) {
         this._super();
 
-        this.render('categories.index', {
+        this.render('menu', {
             into: 'application',
             outlet: 'menu'
         })

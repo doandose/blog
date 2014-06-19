@@ -1,3 +1,1 @@
-posts index
-
 = hb "render 'posts/posts' this"

@@ -1,5 +1,5 @@
 class CategorySerializer < ActiveModel::Serializer
-  embed :ids, include: true
+  embed :ids
 
   attributes :id, :title, :slug
 

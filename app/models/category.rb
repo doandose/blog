@@ -5,5 +5,5 @@ class Category < ActiveRecord::Base
   # relationship
   has_many :posts
 
-  # default_scope -> { joins(:posts).merge(Post.published).uniq }
+  default_scope -> { joins(:posts).merge(Post.published).uniq }
 end
