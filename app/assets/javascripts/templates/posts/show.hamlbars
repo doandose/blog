@@ -1,4 +1,3 @@
-
 %section.info
   %p= hb 'formattedDate'
 
