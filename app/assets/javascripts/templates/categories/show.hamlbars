@@ -1,4 +1,6 @@
 %h1
   = hb 'title'
 
-= hb "render 'posts/posts' posts"
+%ul
+  = hb 'each post in posts' do
+    = hb "post-details post=post"

@@ -4,8 +4,12 @@ Blog.PostsIndexController = Ember.ArrayController.extend({
 });
 
 Blog.PostsShowController = Ember.ObjectController.extend({
-    commentsCount: Ember.computed.alias('comments.length'),
     format: "LL",
+    commentsCount: Ember.computed.alias('comments.length'),
+
+    hasComments: function() {
+      return this.get('commentsCount') > 0;
+    }.property('commentsCount'),
 
     formattedDate: function() {
         moment.lang('pt-br');

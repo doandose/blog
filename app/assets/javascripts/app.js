@@ -4,6 +4,7 @@
 //= require_tree ./models
 //= require_tree ./controllers
 //= require_tree ./templates
+//= require_tree ./components
 //= require router
 //= require_tree ./routes
 

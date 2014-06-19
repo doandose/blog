@@ -1,10 +1,10 @@
-%h2 Comments
-= hb 'commentsCount'
+= hb 'if hasComments' do
+  %h2 Comments
+  = hb 'commentsCount'
 
-%ul
-  = hb 'each comment in comments' do
-
-    %li
-      %img{ bind: { src: "comment.avatar" }}
-      = hb 'comment.email'
-      = hb 'comment.body'
+  %ul
+    = hb 'each comment in comments' do
+      %li
+        %img{ bind: { src: "comment.avatar" }}
+        = hb 'comment.email'
+        = hb 'comment.body'
