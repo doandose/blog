@@ -4,5 +4,5 @@ class Comment < ActiveRecord::Base
   # relationship
   belongs_to :post
 
-  scope :published, -> { where(published: true) }
+  default_scope -> { where.not(published_at: nil) }
 end

@@ -20,7 +20,7 @@ end
     title:        Faker::Lorem.sentence(6),
     body:         Faker::Lorem.paragraph(200),
     author:       Author.all.sample,
-    category:     Category.all.sample,
+    category:     Category.unscoped.sample,
     tags:         Tag.all.sample(5)
   )
 end
@@ -28,7 +28,7 @@ end
 # comments
 10.times do
   Comment.create(
-    published: [false, true].sample,
+    published_at: [nil, DateTime.now].sample,
     email: Faker::Internet.email,
     body: Faker::Lorem.sentence(2),
     post: Post.all.sample

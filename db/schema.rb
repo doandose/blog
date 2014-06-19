@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(version: 7) do
   end
 
   create_table "comments", force: true do |t|
-    t.boolean "published"
-    t.string  "email"
-    t.text    "body"
-    t.integer "post_id"
+    t.datetime "published_at"
+    t.string   "email"
+    t.text     "body"
+    t.integer  "post_id"
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
