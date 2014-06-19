@@ -9,6 +9,6 @@ class Post < ActiveRecord::Base
   belongs_to :category
 
   # scope
+  default_scope -> { where.not(published_at: nil) }
   scope :recent, -> { order(:published_at) }
-  scope :published, -> { where.not(published_at: nil) }
 end

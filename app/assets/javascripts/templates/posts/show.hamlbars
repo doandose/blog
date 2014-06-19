@@ -1,4 +1,3 @@
-%h1= hb 'title'
 
 %section.info
   %p= hb 'formattedDate'
@@ -10,20 +9,5 @@
 
 %p= hb 'body'
 
-%h2 Tags
-%ul
-  = hb 'each tag in tags' do
-
-    %li
-      = hb 'tag.name'
-
-%h2 Comments
-= hb 'commentsCount'
-
-%ul
-  = hb 'each comment in comments' do
-
-    %li
-      %img{ bind: { src: "comment.avatar" }}
-      = hb 'comment.email'
-      = hb 'comment.body'
+= hb "partial 'posts/tags'"
+= hb "partial 'posts/comments'"
