@@ -29,6 +29,7 @@ end
 10.times do
   Comment.create(
     published_at: [nil, DateTime.now].sample,
+    name: Faker::Name.name,
     email: Faker::Internet.email,
     body: Faker::Lorem.sentence(2),
     post: Post.all.sample

@@ -1,3 +1,13 @@
+%label Nome
+= hb "input valueBinding='name'"
+%label Email
+= hb "input type='email' valueBinding='email'"
+%label Comentário
+= hb "textarea valueBinding='text'"
+%a{ :_action => 'createComment' } enviar
+
+= hb 'message'
+
 = hb 'if hasComments' do
   %h2 Comments
   = hb 'commentsCount'

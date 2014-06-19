@@ -19,5 +19,6 @@ Blog::Application.routes.draw do
   constraints FormatTest.new(:json) do
     resources :posts, only: [:index, :show]
     resources :categories, only: :index
+    resources :comments, only: :create
   end
 end

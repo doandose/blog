@@ -5,6 +5,7 @@ Blog.PostsIndexController = Ember.ArrayController.extend({
 
 Blog.PostsShowController = Ember.ObjectController.extend({
     format: "LL",
+    message: '',
     commentsCount: Ember.computed.alias('comments.length'),
 
     hasComments: function() {
@@ -18,5 +19,20 @@ Blog.PostsShowController = Ember.ObjectController.extend({
             format = this.get('format');
 
         return moment(date).format(format);
-    }.property('publishedAt', 'format')
+    }.property('publishedAt', 'format'),
+
+    actions: {
+        createComment: function(){
+            var comment = this.store.createRecord('comment', {
+                name: this.get('name'),
+                email: this.get('email'),
+                body: this.get('text'),
+                post: this.get('model')
+            });
+
+            comment.save().then(function() {
+                this.set('message', 'comentário enviado')
+            }.bind(this))
+        }
+    }
 });
