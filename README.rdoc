@@ -1,0 +1,4 @@
+rake db:populate
+npm install -g bower
+bower install
+rails s
