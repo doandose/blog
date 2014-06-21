@@ -1,10 +1,5 @@
-Blog.Author = DS.Model.extend({
+Blog.Author = DS.Model.extend(Blog.ImageableMixin, {
   name: DS.attr('string'),
   email: DS.attr('string'),
-  posts: DS.hasMany('post'),
-
-  avatar: function() {
-    var hash = this.get('email')
-    return "http://www.gravatar.com/avatar/" + hash;
-  }.property('email')
+  posts: DS.hasMany('post')
 })

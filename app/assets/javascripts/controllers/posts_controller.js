@@ -8,6 +8,11 @@ Blog.PostsShowController = Ember.ObjectController.extend({
     message: '',
     commentsCount: Ember.computed.alias('comments.length'),
 
+    commentsPublisheds: Ember.computed.map('comments', function(comment) {
+        var publishedAt = comment.get('publishedAt');
+        if (!Ember.isBlank(publishedAt)) { return comment }
+    }),
+
     hasComments: function() {
       return this.get('commentsCount') > 0;
     }.property('commentsCount'),
@@ -30,9 +35,7 @@ Blog.PostsShowController = Ember.ObjectController.extend({
                 post: this.get('model')
             });
 
-            comment.save().then(function() {
-                this.set('message', 'comentário enviado')
-            }.bind(this))
+            comment.save()
         }
     }
 });

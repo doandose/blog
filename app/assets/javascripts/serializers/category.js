@@ -1,1 +1,0 @@
-Blog.CategorySerializer = DS.ActiveModelSerializer.extend(DS.EmbeddedRecordsMixin)
