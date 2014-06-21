@@ -3,15 +3,14 @@ Blog.PostsIndexController = Ember.ArrayController.extend({
     sortAscending: false
 });
 
-Blog.PostsShowController = Ember.ObjectController.extend({
+Blog.PostsShowController = Ember.ObjectController.extend(Ember.Validations.Mixin, {
     format: "LL",
-    message: '',
     commentsCount: Ember.computed.alias('comments.length'),
 
-    commentsPublisheds: Ember.computed.map('comments', function(comment) {
-        var publishedAt = comment.get('publishedAt');
-        if (!Ember.isBlank(publishedAt)) { return comment }
-    }),
+    // commentsPublisheds: Ember.computed.map('comments', function(comment) {
+    //     // var publishedAt = comment.get('publishedAt');
+    //     if (!Ember.isBlank(comment.get('publishedAt'))) { return comment } else { return comment }
+    // }),
 
     hasComments: function() {
       return this.get('commentsCount') > 0;
@@ -28,14 +27,29 @@ Blog.PostsShowController = Ember.ObjectController.extend({
 
     actions: {
         createComment: function(){
-            var comment = this.store.createRecord('comment', {
-                name: this.get('name'),
-                email: this.get('email'),
-                body: this.get('text'),
-                post: this.get('model')
-            });
+           var valid = function() {
+                var  recordComment = {
+                    name: this.get('name'),
+                    email: this.get('email'),
+                    body: this.get('text'),
+                    post: this.get('model')
+                };
 
-            comment.save()
+               var comment = this.store.createRecord('comment', recordComment);
+                comment.save()
+           }.bind(this)
+
+           var invalid = function() {
+                console.log('invalid')
+           }
+
+           this.validate().then(valid, invalid)
         }
+    },
+
+    validations: {
+        name: { presence: true},
+        email: { presence: true, format: /.+@.+\..{2,4}/ },
+        body: { presence: true }
     }
 });

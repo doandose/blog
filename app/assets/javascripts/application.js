@@ -4,4 +4,5 @@
 //= require handlebars/handlebars
 //= require ember/ember
 //= require ember-data/ember-data.prod
+//= require ember-validations-shiv/dist/ember-validations
 //= require app
