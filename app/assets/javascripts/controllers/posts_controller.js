@@ -5,13 +5,13 @@ Blog.PostsIndexController = Ember.ArrayController.extend({
 
 Blog.PostsShowController = Ember.ObjectController.extend(Ember.Validations.Mixin, {
     format: "LL",
-    commentsCount: Ember.computed.alias('comments.length'),
+    commentsCount: Ember.computed.alias('commentsPublisheds.length'),
 
     commentsPublisheds: function(comment){
         return this.get('comments').filter(function(comment){
             return !Ember.isBlank(comment.get('publishedAt'));
         });
-    }.property(),
+    }.property('comments', 'publishedAt'),
 
     hasComments: function() {
       return this.get('commentsCount') > 0;
@@ -33,7 +33,8 @@ Blog.PostsShowController = Ember.ObjectController.extend(Ember.Validations.Mixin
                     name: this.get('name'),
                     email: this.get('email'),
                     body: this.get('text'),
-                    post: this.get('model')
+                    post: this.get('model'),
+                    publishedAt: new Date()
                 };
 
                var comment = this.store.createRecord('comment', recordComment);

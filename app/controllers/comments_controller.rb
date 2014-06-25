@@ -6,10 +6,8 @@ class CommentsController < ApplicationController
     comment.post = post
 
     if comment.save
-      p 'if================='
-      render json: comment, status: :ok, serializer: CommentSerializer
+      render json: comment, status: :ok
     else
-      p 'else================='
       render json: comment.errors, status: 422
     end
   end
