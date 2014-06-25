@@ -4,9 +4,10 @@ class CommentsController < ApplicationController
     params_comment.delete(:post_id)
     comment = Comment.new params_comment
     comment.post = post
+
     if comment.save
       p 'if================='
-      render json: comment, status: :ok
+      render json: comment, status: :ok, serializer: CommentSerializer
     else
       p 'else================='
       render json: comment.errors, status: 422
