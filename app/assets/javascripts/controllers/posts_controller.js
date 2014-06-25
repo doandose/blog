@@ -7,10 +7,11 @@ Blog.PostsShowController = Ember.ObjectController.extend(Ember.Validations.Mixin
     format: "LL",
     commentsCount: Ember.computed.alias('comments.length'),
 
-    // commentsPublisheds: Ember.computed.map('comments', function(comment) {
-    //     // var publishedAt = comment.get('publishedAt');
-    //     if (!Ember.isBlank(comment.get('publishedAt'))) { return comment } else { return comment }
-    // }),
+    commentsPublisheds: function(comment){
+        return this.get('comments').filter(function(comment){
+            return !Ember.isBlank(comment.get('publishedAt'));
+        });
+    }.property(),
 
     hasComments: function() {
       return this.get('commentsCount') > 0;
