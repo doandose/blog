@@ -7,14 +7,14 @@ Blog.PostsShowController = Ember.ObjectController.extend(Ember.Validations.Mixin
     format: "LL",
     commentsCount: Ember.computed.alias('commentsPublisheds.length'),
 
-    commentsPublisheds: function(comment){
-        return this.get('comments').filter(function(comment){
+    commentsPublisheds: function(comment) {
+        return this.get('comments').filter(function(comment) {
             return !Ember.isBlank(comment.get('publishedAt'));
         });
-    }.property('comments', 'publishedAt'),
+    }.property('comments.@each.publishedAt'),
 
     hasComments: function() {
-      return this.get('commentsCount') > 0;
+        return this.get('commentsCount') > 0;
     }.property('commentsCount'),
 
     formattedDate: function() {
@@ -27,31 +27,43 @@ Blog.PostsShowController = Ember.ObjectController.extend(Ember.Validations.Mixin
     }.property('publishedAt', 'format'),
 
     actions: {
-        createComment: function(){
-           var valid = function() {
-                var  recordComment = {
+        createComment: function() {
+            var valid = function() {
+                var recordComment = {
                     name: this.get('name'),
                     email: this.get('email'),
                     body: this.get('text'),
-                    post: this.get('model'),
-                    publishedAt: new Date()
+                    post: this.get('model')
                 };
 
-               var comment = this.store.createRecord('comment', recordComment);
-                comment.save()
-           }.bind(this)
+                var comment = this.store.createRecord('comment', recordComment);
 
-           var invalid = function() {
+                comment.save().then(function(comment) {
+                    this.set('name', '')
+                    this.set('email', '')
+                    this.set('text', '')
+                    this.set('message', 'Comentário enviado para moderação!')
+                }.bind(this));
+            }.bind(this)
+
+            var invalid = function() {
                 console.log('invalid')
-           }
+            }
 
-           this.validate().then(valid, invalid)
+            this.validate().then(valid, invalid)
         }
     },
 
     validations: {
-        name: { presence: true},
-        email: { presence: true, format: /.+@.+\..{2,4}/ },
-        body: { presence: true }
+        name: {
+            presence: true
+        },
+        email: {
+            presence: true,
+            format: /.+@.+\..{2,4}/
+        },
+        body: {
+            presence: true
+        }
     }
 });
