@@ -18,7 +18,7 @@
   = hb 'commentsCount'
 
   %ul
-    = hb 'each comment in commentsPublishedsSorted' do
+    = hb 'each comment in commentPublishedSorteds' do
       %li
         %img{ bind: { src: "comment.avatar" }}
         = hb 'comment.email'

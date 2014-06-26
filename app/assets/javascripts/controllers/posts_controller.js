@@ -7,7 +7,7 @@ Blog.PostsShowController = Ember.ObjectController.extend(Ember.Validations.Mixin
     format: "LL",
     commentsCount: Ember.computed.alias('commentsPublisheds.length'),
     sortProperties: ['publishedAt:desc'],
-    commentsPublishedsSorted: Ember.computed.sort('model.comments', 'sortProperties'),
+    commentPublishedSorteds: Ember.computed.sort('model.comments', 'sortProperties'),
 
     commentsPublisheds: function(comment) {
         return this.get('comments').filter(function(comment) {
@@ -44,13 +44,13 @@ Blog.PostsShowController = Ember.ObjectController.extend(Ember.Validations.Mixin
                     this.set('name', '')
                     this.set('email', '')
                     this.set('text', '')
-                    this.set('message', 'Comentário enviado para moderação!')
+                    this.set('message', t('flashs.saveComment'))
                 }.bind(this));
             }.bind(this)
 
             var invalid = function() {
-                console.log('invalid')
-            }
+                console.log('invalid', this.get('errors'))
+            }.bind(this)
 
             this.validate().then(valid, invalid)
         }

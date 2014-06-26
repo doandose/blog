@@ -1,26 +1,27 @@
 {
-  "name": "blog",
-  "version": "0.0.1",
-  "homepage": "https://github.com/doandose/blog",
-  "authors": [
-    "Adriano Tadao Sabadini Matsumoto <adriano.tadao@gmail.com>",
-    "Saulo da Silva Santiago <saulodasilvasantiago@gmail.com>"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "vendor/assets/javascripts",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "jquery": "2.1.1",
-    "ember": "1.5.1",
-    "ember-data": "~1.0.0-beta.8",
-    "moment": "~2.7.0",
-    "js-md5": "~1.1.0",
-    "ember-validations-shiv": "~1.0.0-beta.2"
-  }
+    "name": "blog",
+    "version": "0.0.1",
+    "homepage": "https://github.com/doandose/blog",
+    "authors": [
+        "Adriano Tadao Sabadini Matsumoto <adriano.tadao@gmail.com>",
+        "Saulo da Silva Santiago <saulodasilvasantiago@gmail.com>"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "vendor/assets/javascripts",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "jquery": "2.1.1",
+        "ember": "1.5.1",
+        "ember-data": "~1.0.0-beta.8",
+        "moment": "~2.7.0",
+        "js-md5": "~1.1.0",
+        "ember-validations-shiv": "~1.0.0-beta.2",
+        "ember-i18n": "~2.0.0"
+    }
 }
