@@ -7,7 +7,7 @@ Blog.PostsShowController = Ember.ObjectController.extend(Ember.Validations.Mixin
     format: "LL",
     commentsCount: Ember.computed.alias('commentsPublisheds.length'),
     sortProperties: ['publishedAt:desc'],
-    commentPublishedSorteds: Ember.computed.sort('model.comments', 'sortProperties'),
+    commentPublishedSorteds: Ember.computed.sort('commentsPublisheds', 'sortProperties').property('commentsPublisheds.@each.publishedAt'),
 
     commentsPublisheds: function(comment) {
         return this.get('comments').filter(function(comment) {
