@@ -6,12 +6,14 @@ Blog.PostsIndexController = Ember.ArrayController.extend({
 Blog.PostsShowController = Ember.ObjectController.extend(Ember.Validations.Mixin, {
     format: "LL",
     commentsCount: Ember.computed.alias('commentsPublisheds.length'),
+    sortProperties: ['publishedAt:desc'],
+    commentsPublishedsSorted: Ember.computed.sort('model.comments', 'sortProperties'),
 
     commentsPublisheds: function(comment) {
         return this.get('comments').filter(function(comment) {
             return !Ember.isBlank(comment.get('publishedAt'));
         });
-    }.property('comments.@each.publishedAt'),
+    }.property('comments.@each.publishedAt').cacheable(),
 
     hasComments: function() {
         return this.get('commentsCount') > 0;

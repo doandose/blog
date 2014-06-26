@@ -1,19 +1,24 @@
 %label Nome
 = hb "input valueBinding='name'"
+
 %label Email
 = hb "input type='email' valueBinding='email'"
+
 %label Comentário
 = hb "textarea valueBinding='text'"
+
 %a{ :_action => 'createComment' } enviar
 
+%br
 = hb 'message'
+
 
 = hb 'if hasComments' do
   %h2 Comments
   = hb 'commentsCount'
 
   %ul
-    = hb 'each comment in commentsPublisheds' do
+    = hb 'each comment in commentsPublishedsSorted' do
       %li
         %img{ bind: { src: "comment.avatar" }}
         = hb 'comment.email'
