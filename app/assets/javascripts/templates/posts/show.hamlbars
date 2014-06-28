@@ -6,6 +6,7 @@
   %img{ bind: { src: "author.avatar"}}
 
 
+%h1= hb 'title'
 %p= hb 'body'
 
 = hb "partial 'posts/tags'"

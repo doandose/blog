@@ -1,15 +1,21 @@
 Blog.PostsIndexController = Ember.ArrayController.extend({
     sortProperties: ['publishedAt'],
-    sortAscending: false
+    sortAscending: false,
+
+    postsPublisheds: function() {
+        return this.filter(function(post) {
+            return !Ember.isBlank(post.get('publishedAt'));
+        });
+    }.property('@each.publishedAt').cacheable(),
 });
 
-Blog.PostsShowController = Ember.ObjectController.extend(Ember.Validations.Mixin, {
+Blog.PostsShowController = Ember.ObjectController.extend(Blog.DatableMixin, Blog.CommentableMixin, {
     format: "LL",
     commentsCount: Ember.computed.alias('commentsPublisheds.length'),
     sortProperties: ['publishedAt:desc'],
     commentPublishedSorteds: Ember.computed.sort('commentsPublisheds', 'sortProperties').property('commentsPublisheds.@each.publishedAt'),
 
-    commentsPublisheds: function(comment) {
+    commentsPublisheds: function() {
         return this.get('comments').filter(function(comment) {
             return !Ember.isBlank(comment.get('publishedAt'));
         });
@@ -17,55 +23,5 @@ Blog.PostsShowController = Ember.ObjectController.extend(Ember.Validations.Mixin
 
     hasComments: function() {
         return this.get('commentsCount') > 0;
-    }.property('commentsCount'),
-
-    formattedDate: function() {
-        moment.lang('pt-br');
-
-        var date = this.get('publishedAt'),
-            format = this.get('format');
-
-        return moment(date).format(format);
-    }.property('publishedAt', 'format'),
-
-    actions: {
-        createComment: function() {
-            var valid = function() {
-                var recordComment = {
-                    name: this.get('name'),
-                    email: this.get('email'),
-                    body: this.get('text'),
-                    post: this.get('model')
-                };
-
-                var comment = this.store.createRecord('comment', recordComment);
-
-                comment.save().then(function(comment) {
-                    this.set('name', '')
-                    this.set('email', '')
-                    this.set('text', '')
-                    this.set('message', t('flashs.saveComment'))
-                }.bind(this));
-            }.bind(this)
-
-            var invalid = function() {
-                console.log('invalid', this.get('errors'))
-            }.bind(this)
-
-            this.validate().then(valid, invalid)
-        }
-    },
-
-    validations: {
-        name: {
-            presence: true
-        },
-        email: {
-            presence: true,
-            format: /.+@.+\..{2,4}/
-        },
-        body: {
-            presence: true
-        }
-    }
+    }.property('commentsCount')
 });
