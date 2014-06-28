@@ -7,17 +7,20 @@ Em.I18n.translations = {
         errors: {
             blank: "não pode ficar em branco.",
             invalid: 'inválido'
-        }
-    },
-
-    'en': {
-        flashs: {
-            saveComment: 'Comments has been saved!'
         },
 
-        errors: {
-            blank: "not be blank.",
-            invalid: 'invalid'
+        titles: {
+            comments: 'Comentários'
+        },
+
+        labels: {
+            name: 'Nome',
+            email: 'E-mail',
+            body: 'Mensagem'
+        },
+
+        buttons: {
+            submit: 'Enviar'
         }
     }
 }

@@ -23,5 +23,12 @@ Blog.PostsShowController = Ember.ObjectController.extend(Blog.DatableMixin, Blog
 
     hasComments: function() {
         return this.get('commentsCount') > 0;
-    }.property('commentsCount')
+    }.property('commentsCount'),
+
+    tagsFormatted: function() {
+        return this.get('tags').map(function(tag) {
+            var formatted = '#' + tag.get('name');
+            return tag.set('name', formatted);
+        });
+    }.property('tags.@each.name').cacheable(),
 });

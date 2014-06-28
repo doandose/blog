@@ -1,13 +1,15 @@
-%section.info
-  %p= hb 'formattedDate'
+%article
+  %section.author
+    %p= hb 'author.name'
+    %p= hb 'author.email'
+    %img{ bind: { src: "author.avatar"}}
 
-  %p= hb 'author.name'
-  %p= hb 'author.email'
-  %img{ bind: { src: "author.avatar"}}
+  %h1
+    = hb 'title'
+    %span.badge= hb 'formattedDate'
 
-
-%h1= hb 'title'
-%p= hb 'body'
+  %p= hb 'body'
 
 = hb "partial 'posts/tags'"
+= hb "partial 'comments/form'"
 = hb "partial 'posts/comments'"

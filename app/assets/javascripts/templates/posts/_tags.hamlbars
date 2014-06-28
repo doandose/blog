@@ -1,6 +1,4 @@
-%h2 Tags
-%ul
-  = hb 'each tag in tags' do
-
-    %li
-      = hb 'tag.name'
+%section.tags
+  %ul
+    = hb 'each tag in tagsFormatted' do
+      = hb "tag-details tag=tag"

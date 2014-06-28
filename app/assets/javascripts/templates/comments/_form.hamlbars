@@ -1,0 +1,16 @@
+%form.comment
+  %section.info
+    = hb 'message'
+
+  %section.inputs
+    %label= hb 't labels.name'
+    = hb "input valueBinding='name'"
+
+    %label= hb 't labels.email'
+    = hb "input type='email' valueBinding='email'"
+
+    %label= hb 't labels.body'
+    = hb "textarea valueBinding='text'"
+
+  %section.actions
+    %a{ :_action => 'createComment' }= hb 't buttons.submit'
