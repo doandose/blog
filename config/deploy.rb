@@ -1,4 +1,3 @@
-# config valid only for Capistrano 3.1
 lock '3.2.0'
 
 set :application, 'blog'
@@ -30,11 +29,12 @@ namespace :deploy do
   after 'npm:install', :copy_env do
     on roles(:app) do
       execute <<-CMD
+        cp #{ deploy_to }shared/.env #{ release_path }/.env
       CMD
     end
   end
 
-  after 'bower:install', 'grunt'
+  after 'bower:install', 'npm:install'
 
   after :publishing, :restart
 end
