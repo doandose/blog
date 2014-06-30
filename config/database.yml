@@ -1,8 +1,16 @@
 default: &default
   adapter: mysql2
-  pool: 5
-  timeout: 5000
+  encoding: utf8
+  host: localhost
 
 development:
   <<: *default
+  pool: 5
+  timeout: 5000
   database: blog_development
+
+production:
+  <<: *default
+  database: blog_production
+  username: ENV['database_username']
+  password: ENV['database_password']
