@@ -1,6 +1,6 @@
 %h1
   = hb 'title'
 
-%ul
+%ul.posts
   = hb 'each post in posts' do
     = hb "post-details post=post"

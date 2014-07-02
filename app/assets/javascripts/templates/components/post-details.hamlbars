@@ -1,2 +1,5 @@
 = hb "link-to 'posts.show' post" do
-  = hb 'post.title'
+  %h3
+    = hb 'post.title'
+
+  %p= hb 'post.description'
