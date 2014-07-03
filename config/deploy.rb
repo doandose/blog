@@ -16,6 +16,14 @@ set :nvm_path, '/home/blog/.nvm'
 set :nvm_node, 'v0.10.10'
 set :nvm_map_bins, %w{node npm bower}
 
+set :rvm_ruby_version, 'ruby-2.1.1@blog'
+
+# set :bundle_bins, fetch(:bundle_bins, [])
+# set :bundle_gemfile, -> { release_path.join('Gemfile') }
+set :bundle_flags, ''
+set :bundle_path, -> {}
+set :bundle_binstubs, -> {}
+set :bundle_env_variables, {}
 
 namespace :deploy do
 
