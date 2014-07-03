@@ -12,5 +12,5 @@ development:
 production:
   <<: *default
   database: blog_production
-  username: ENV['database_username']
-  password: ENV['database_password']
+  username: ENV['DATABASE_USERNAME']
+  password: ENV['DATABASE_PASSWORD']
