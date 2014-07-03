@@ -22,4 +22,5 @@ group :development do
   gem 'capistrano-nvm'
   gem 'capistrano-npm'
   gem 'capistrano-bower'
+  gem 'capistrano-bundler', '~> 1.1.2'
 end

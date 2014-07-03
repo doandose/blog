@@ -36,5 +36,7 @@ namespace :deploy do
     end
   end
 
+  before 'deploy:updated', 'bundler:install'
+
   after :publishing, :restart
 end
