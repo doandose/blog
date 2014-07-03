@@ -12,6 +12,7 @@ gem 'friendly_id', '5.0.0'
 gem 'stylus', '1.0.1'
 gem 'dotenv-rails'
 
+gem 'therubyracer'
 gem 'puma'
 
 group :assets do
