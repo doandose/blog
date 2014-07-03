@@ -2,7 +2,7 @@ lock '3.2.0'
 
 set :application, 'blog'
 set :repo_url, 'git@github.com:doandose/blog.git'
-set :branch, 'master'
+set :branch, 'capistrano'
 
 set :deploy_to, '/home/blog/www/'
 set :scm, :git
@@ -26,6 +26,8 @@ namespace :deploy do
     end
   end
 
+  after 'bower:install', 'npm:install'
+
   after 'npm:install', :copy_env do
     on roles(:app) do
       execute <<-CMD
@@ -33,8 +35,6 @@ namespace :deploy do
       CMD
     end
   end
-
-  after 'bower:install', 'npm:install'
 
   after :publishing, :restart
 end
