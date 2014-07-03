@@ -26,4 +26,5 @@ group :development do
   gem 'capistrano-bower'
   gem 'capistrano-bundler', '~> 1.1.2'
   gem 'capistrano-rvm'
+  gem 'capistrano3-puma'
 end
