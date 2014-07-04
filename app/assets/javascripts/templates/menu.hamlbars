@@ -1,9 +1,10 @@
-%ul
-  %li
-    = hb "link-to 'posts'" do
-      Home
-
-  = hb 'each category in categories' do
+%nav
+  %ul
     %li
-      = hb "link-to 'categories.show' category" do
-        = hb 'category.title'
+      = hb "link-to 'posts'" do
+        Home
+
+    = hb 'each category in categories' do
+      %li
+        = hb "link-to 'categories.show' category" do
+          = hb 'category.title'

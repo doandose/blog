@@ -2,6 +2,7 @@ class CreatePosts < ActiveRecord::Migration
   def change
     create_table :posts, options: 'engine=MyISAM DEFAULT CHARSET=utf8' do |t|
       t.string :title
+      t.string :description
       t.string :slug
       t.text :body
       t.datetime :published_at

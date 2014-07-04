@@ -18,6 +18,7 @@ end
   Post.create(
     published_at: [nil, DateTime.now].sample,
     title:        Faker::Lorem.sentence(6),
+    description:        Faker::Lorem.sentence(19),
     body:         Faker::Lorem.paragraph(200),
     author:       Author.all.sample,
     category:     Category.unscoped.sample,

@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 7) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
+    t.string   "description"
     t.string   "slug"
     t.text     "body"
     t.datetime "published_at"

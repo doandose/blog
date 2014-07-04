@@ -2,6 +2,7 @@ Blog.Post = DS.Model.extend({
     published: DS.attr('boolean'),
     slug: DS.attr('string'),
     title: DS.attr('string'),
+    description: DS.attr('string'),
     body: DS.attr('string'),
     publishedAt: DS.attr('string'),
 

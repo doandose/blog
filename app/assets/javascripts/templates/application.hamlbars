@@ -1,8 +1,9 @@
-%header
-  {{ outlet menu }}
+.page_wrapper
+  %header
+    {{ outlet menu }}
 
-#container
-  {{ outlet }}
+  #container
+    {{ outlet }}
 
 %footer
   Footer
