@@ -1,0 +1,16 @@
+@mixin default-headings-settings
+  font-weight: bold
+  letter-spacing: (1/$default-size)em
+
+h1
+  @include default-headings-settings
+  font-size: (24/$default-size)em
+
+h2
+  @include default-headings-settings
+  font-size: (22/$default-size)em
+
+h3
+  @include default-headings-settings
+  font-size: (20/$default-size)em
+  letter-spacing: (1.7/$default-size)em

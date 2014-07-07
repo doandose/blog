@@ -1,5 +1,5 @@
 Blog.DatableMixin = Ember.Mixin.create({
-  formattedDate: function() {
+    formattedDate: function() {
         moment.lang('pt-br');
 
         var date = this.get('publishedAt'),
