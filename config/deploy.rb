@@ -23,9 +23,7 @@ set :bundle_path, -> {}
 set :bundle_binstubs, -> {}
 set :bundle_env_variables, {}
 
-
 set :puma_conf, "#{ shared_path }/puma.rb"
-
 
 namespace :deploy do
 
