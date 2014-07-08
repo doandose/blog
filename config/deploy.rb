@@ -23,7 +23,6 @@ set :bundle_path, -> {}
 set :bundle_binstubs, -> {}
 set :bundle_env_variables, {}
 
-# set :puma_conf, "#{ shared_path }/puma.rb"
 set :puma_bind, "unix://#{ shared_path }/tmp/sockets/puma.sock"
 set :puma_access_log, "#{ shared_path }/log/puma_error.log"
 set :puma_error_log, "#{ shared_path }/log/puma_access.log"
@@ -34,13 +33,6 @@ set :puma_init_active_record, true
 set :puma_preload_app, true
 
 namespace :deploy do
-  desc 'Restart application'
-  task :restart do
-    # on roles(:app), in: :sequence, wait: 5 do
-    #   execute :touch, release_path.join('tmp/restart.txt')
-    # end
-  end
-
   after 'bower:install', 'npm:install'
 
   after 'npm:install', :copy_env do
