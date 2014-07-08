@@ -23,10 +23,17 @@ set :bundle_path, -> {}
 set :bundle_binstubs, -> {}
 set :bundle_env_variables, {}
 
-set :puma_conf, "#{ shared_path }/puma.rb"
+# set :puma_conf, "#{ shared_path }/puma.rb"
+set :puma_bind, "unix://#{ shared_path }/tmp/sockets/puma.sock"
+set :puma_access_log, "#{ shared_path }/log/puma_error.log"
+set :puma_error_log, "#{ shared_path }/log/puma_access.log"
+set :puma_env, fetch(:rails_env, 'production')
+set :puma_threads, [0, 4]
+set :puma_workers, 2
+set :puma_init_active_record, true
+set :puma_preload_app, true
 
 namespace :deploy do
-
   desc 'Restart application'
   task :restart do
     # on roles(:app), in: :sequence, wait: 5 do
@@ -45,6 +52,5 @@ namespace :deploy do
   end
 
   before 'deploy:updated', 'bundler:install'
-
   after :publishing, :restart
 end
