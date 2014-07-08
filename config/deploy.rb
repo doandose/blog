@@ -23,16 +23,19 @@ set :bundle_path, -> {}
 set :bundle_binstubs, -> {}
 set :bundle_env_variables, {}
 
-set :puma_bind, "unix://#{ shared_path }/tmp/sockets/puma.sock"
-set :puma_access_log, "#{ shared_path }/log/puma_error.log"
-set :puma_error_log, "#{ shared_path }/log/puma_access.log"
-set :puma_env, fetch(:rails_env, 'production')
-set :puma_threads, [0, 4]
-set :puma_workers, 2
-set :puma_init_active_record, true
-set :puma_preload_app, true
-
 namespace :deploy do
+  desc 'Start application'
+  task :start, roles(:app)
+  after 'deploy:start', 'puma:start'
+
+  desc 'Stop application'
+  task :stop, roles(:app)
+  after 'deploy:stop', 'puma:stop'
+
+  desc 'Restart application'
+  task :restart, roles(:app)
+  after 'deploy:restart', 'puma:restart'
+
   after 'bower:install', 'npm:install'
 
   after 'npm:install', :copy_env do
@@ -44,5 +47,5 @@ namespace :deploy do
   end
 
   before 'deploy:updated', 'bundler:install'
-  after :publishing, :restart
+  after 'assets:precompile', 'puma:restart'
 end
