@@ -9,3 +9,13 @@
 //= require ember-i18n/lib/i18n
 
 //= require app
+//= require_tree ./initializers
+//= require_tree ./config
+//= require_tree ./models/mixings
+//= require_tree ./models
+//= require_tree ./controllers/mixings
+//= require_tree ./controllers
+//= require_tree ./templates
+//= require_tree ./components
+
+//= require_tree ./routes

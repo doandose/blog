@@ -1,0 +1,18 @@
+header
+  background-color: #fff
+  nav
+    margin: 0 auto
+    padding: 2 * $default-padding
+    width: $max-width
+    li
+      display: inline-block
+      padding: $default-padding
+
+  a
+    color: $prymary-color
+    font-weight: bold
+    font-size: 14em / $default-size
+    &:hover
+      color: lighten($prymary-color, 30%)
+    &.active
+      text-decoration: underline
