@@ -2,7 +2,7 @@ lock '3.2.0'
 
 set :application, 'blog'
 set :repo_url, 'git@github.com:doandose/blog.git'
-set :branch, 'capistrano'
+set :branch, 'master'
 
 set :deploy_to, '/home/blog/www/'
 set :scm, :git
