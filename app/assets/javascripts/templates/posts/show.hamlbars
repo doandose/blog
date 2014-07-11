@@ -8,7 +8,7 @@
     = hb 'title'
     %span.badge= hb 'formattedDate'
 
-  %p= hb 'body'
+  %section.post_content= hb! "view.body"
 
 = hb "partial 'posts/tags'"
 = hb "partial 'comments/form'"

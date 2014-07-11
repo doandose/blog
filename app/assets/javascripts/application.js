@@ -7,6 +7,12 @@
 //= require ember-validations-shiv/dist/ember-validations
 //= require cldr/plurals
 //= require ember-i18n/lib/i18n
+//= require marked/lib/marked
+
+//= require rainbow/js/rainbow
+//= require rainbow/js/language/generic
+//= require rainbow/js/language/python
+//= require rainbow/js/language/ruby
 
 //= require app
 //= require_tree ./initializers
@@ -15,6 +21,7 @@
 //= require_tree ./models
 //= require_tree ./controllers/mixings
 //= require_tree ./controllers
+//= require_tree ./views
 //= require_tree ./templates
 //= require_tree ./components
 
