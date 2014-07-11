@@ -8,6 +8,7 @@
 //= require cldr/plurals
 //= require ember-i18n/lib/i18n
 //= require marked/lib/marked
+//= require markdown/lib/markdown
 
 //= require rainbow/js/rainbow
 //= require rainbow/js/language/generic

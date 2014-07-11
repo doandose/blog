@@ -1,0 +1,28 @@
+section.post_info
+  float: right
+  padding: ($default-padding * 4) 0 ($default-padding * 4) $default-padding
+  width: 18%
+
+  img
+    @include image-rounded()
+
+  span.img
+    +inline-block
+    width: 32%
+
+  span.info
+    +inline-block
+    font-size: 12em / $default-size
+    width: 60%
+
+    p, b
+      +ellipsis
+      color: $text-color
+      display: block
+      width: 100%
+
+    b
+      font-weight: bold
+
+    p
+      padding: 0.4 * $default-padding
