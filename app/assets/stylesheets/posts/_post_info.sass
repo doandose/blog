@@ -1,19 +1,21 @@
 section.post_info
   float: right
   padding: ($default-padding * 4) 0 ($default-padding * 4) $default-padding
-  width: 18%
+  width: 26%
 
   img
     @include image-rounded()
 
   span.img
     +inline-block
-    width: 32%
+    width: 20%
+    margin-left: 10em / $default-size
 
   span.info
     +inline-block
     font-size: 12em / $default-size
-    width: 60%
+    width: 73%
+    text-align: right
 
     p, b
       +ellipsis
