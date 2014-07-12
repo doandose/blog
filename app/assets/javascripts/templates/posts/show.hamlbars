@@ -10,9 +10,9 @@
       %p= hb 'author.email'
 
     %span.img
-      %img{ bind: { src: "author.avatar"}}
+      %img{ bind: { src: 'author.avatar'}}
 
-  %section.post_body= hb! "view.body"
+  %section.post_body= hb! 'view.body'
 
 = hb "partial 'posts/tags'"
 = hb "partial 'comments/form'"

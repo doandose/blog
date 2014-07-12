@@ -6,4 +6,4 @@
     {{ outlet }}
 
 %footer
-  Footer
+  {{ outlet footer }}
