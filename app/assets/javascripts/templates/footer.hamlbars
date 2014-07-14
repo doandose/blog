@@ -1,3 +1,5 @@
-= hb 'each author in authors' do
-	= hb 'author.name'
-	%img{ bind: {src: 'author.avatar' }}
+.footer_wrapper
+  = hb 'each author in authors' do
+    %a{ target: :blank, bind: { href: 'author.linkedin' }}
+      %img{ bind: {src: 'author.avatar' }}
+      = hb 'author.name'

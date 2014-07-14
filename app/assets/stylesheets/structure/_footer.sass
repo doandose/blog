@@ -1,0 +1,16 @@
+footer
+  // position: relative
+  +clearfix
+  .footer_wrapper
+    // position: absolute
+    // top: 50%
+    display: table
+    margin: ($footer-size - (90em /$default-size))/2 auto 0 auto
+
+    a ~ a
+      margin-left: 18em / $default-size
+
+    a
+      +inline-block
+      img
+        @include image-rounded(90em)

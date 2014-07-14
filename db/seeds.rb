@@ -1,6 +1,6 @@
 # author
 2.times do
-  Author.create(name: Faker::Name.name, email: Faker::Internet.email)
+  Author.create(name: Faker::Name.name, email: Faker::Internet.email, linkedin: Faker::Internet.url)
 end
 
 # categories

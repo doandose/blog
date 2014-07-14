@@ -1,4 +1,5 @@
-Blog.Post = DS.Model.extend({
+Blog.Post = DS.Model.extend(Blog.DatableMixin, {
+    format: 'LL',
     published: DS.attr('boolean'),
     slug: DS.attr('string'),
     title: DS.attr('string'),
