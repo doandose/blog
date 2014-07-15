@@ -4,3 +4,7 @@ var Blog = Ember.Application.create({
     LOG_ACTIVE_GENERATION: true,
     LOG_VIEW_LOOKUPS: true
 })
+
+Ember.LinkView.reopen({
+    attributeBindings: ['class']
+})
