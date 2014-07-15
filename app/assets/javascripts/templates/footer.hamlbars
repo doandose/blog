@@ -2,4 +2,4 @@
   = hb 'each author in authors' do
     %a{ target: :blank, bind: { href: 'author.linkedin' }}
       %img{ bind: {src: 'author.avatar' }}
-      = hb 'author.name'
+      %p= hb 'author.name'
