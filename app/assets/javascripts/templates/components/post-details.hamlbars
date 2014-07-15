@@ -1,5 +1,6 @@
 = hb "link-to 'posts.show' post" do
   %h3
     = hb 'post.title'
+  %span.badge= hb 'post.formattedDate'
 
   %p= hb 'post.description'

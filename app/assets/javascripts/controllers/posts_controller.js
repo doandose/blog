@@ -9,8 +9,7 @@ Blog.PostsIndexController = Ember.ArrayController.extend({
     }.property('@each.publishedAt').cacheable(),
 });
 
-Blog.PostsShowController = Ember.ObjectController.extend(Blog.DatableMixin, Blog.CommentableMixin, {
-    format: "LL",
+Blog.PostsShowController = Ember.ObjectController.extend(Blog.CommentableMixin, {
     commentsCount: Ember.computed.alias('commentsPublisheds.length'),
     sortProperties: ['publishedAt:desc'],
     commentPublishedSorteds: Ember.computed.sort('commentsPublisheds', 'sortProperties').property('commentsPublisheds.@each.publishedAt'),

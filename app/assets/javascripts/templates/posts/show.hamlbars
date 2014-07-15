@@ -5,13 +5,14 @@
     %span.badge= hb 'formattedDate'
 
   %section.post_info
-    %span.img
-      %img{ bind: { src: "author.avatar"}}
     %span.info
       %b= hb 'author.name'
       %p= hb 'author.email'
 
-  %section.post_body= hb! "view.body"
+    %span.img
+      %img{ bind: { src: 'author.avatar'}}
+
+  %section.post_body= hb! 'view.body'
 
 = hb "partial 'posts/tags'"
 = hb "partial 'comments/form'"

@@ -1,5 +1,5 @@
-@mixin image-rounded
+@mixin image-rounded($size)
   +border-radius(50%)
   border: (1em / $default-size) solid $text-color
   padding: (0.004em * $default-size)
-  width: 42em / $default-size
+  width: $size / $default-size
