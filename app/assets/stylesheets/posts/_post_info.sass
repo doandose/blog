@@ -1,30 +1,31 @@
-section.post_info
-  float: right
-  padding: ($default-padding * 4) 0 ($default-padding * 4) $default-padding
-  width: 26%
+section
+  .post_info
+    float: right
+    padding: ($default-padding * 4) 0 ($default-padding * 4) $default-padding
+    width: 26%
 
-  img
-    @include image-rounded(42em)
+    img
+      @include image-rounded(42em)
 
-  span.img
-    +inline-block
-    width: 20%
-    margin-left: 10em / $default-size
+    span.img
+      +inline-block
+      width: 20%
+      margin-left: 10em / $default-size
 
-  span.info
-    +inline-block
-    font-size: 12em / $default-size
-    width: 73%
-    text-align: right
+    span.info
+      +inline-block
+      font-size: 12em / $default-size
+      width: 73%
+      text-align: right
 
-    p, b
-      +ellipsis
-      color: $text-color
-      display: block
-      width: 100%
+      p, b
+        +ellipsis
+        color: #fff
+        display: block
+        width: 100%
 
-    b
-      font-weight: bold
+      b
+        font-weight: bold
 
-    p
-      padding: 0.4 * $default-padding
+      p
+        padding: 0.4 * $default-padding

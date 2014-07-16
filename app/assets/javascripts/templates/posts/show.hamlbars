@@ -1,16 +1,17 @@
 %article.post_show
-  %section.post_header
-    %h1
-      = hb 'title'
-    %span.badge= hb 'formattedDate'
+  %section{ bind: { class: 'category.dominantColor' }}
+    .post_header
+      %h1
+        = hb 'title'
+      %span.badge= hb 'formattedDate'
 
-  %section.post_info
-    %span.info
-      %b= hb 'author.name'
-      %p= hb 'author.email'
+    .post_info
+      %span.info
+        %b= hb 'author.name'
+        %p= hb 'author.email'
 
-    %span.img
-      %img{ bind: { src: 'author.avatar'}}
+      %span.img
+        %img{ bind: { src: 'author.avatar'}}
 
   %section.post_body= hb! 'view.body'
 
