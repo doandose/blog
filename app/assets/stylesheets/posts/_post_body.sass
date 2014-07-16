@@ -1,11 +1,15 @@
 section.post_body
   +inline-block
-  p
+
+  p, ul li, ol li
     letter-spacing: 1em / $default-size !important
     line-height: 22em / $default-size !important
 
-  h1, h2, h6, p
-    padding: $default-padding 0
+  h1, h2, h3, h6, p
+    padding: (4 * $default-padding) 0 0 0
+
+  pre
+    margin-top: 4 * $default-padding
 
   em
     font-size: 11em / $default-size
