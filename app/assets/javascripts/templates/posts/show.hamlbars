@@ -15,6 +15,6 @@
 
   %section.post_body= hb! 'view.body'
 
-= hb "partial 'posts/tags'"
-= hb "partial 'comments/form'"
-= hb "partial 'posts/comments'"
+  = hb "partial 'posts/tags'"
+  = hb "partial 'comments/form'"
+  = hb "partial 'posts/comments'"
