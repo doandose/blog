@@ -10,7 +10,7 @@ Blog.PostsIndexController = Ember.ArrayController.extend(Ember.PaginationModule,
         return this.filter(function(post) {
             return !Ember.isBlank(post.get('publishedAt'));
         });
-    }.property('@each.publishedAt'),
+    }.property('@each.publishedAt').cacheable(),
 });
 
 Blog.PostsShowController = Ember.ObjectController.extend(Blog.CommentableMixin, {
