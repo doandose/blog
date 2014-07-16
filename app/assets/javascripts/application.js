@@ -4,6 +4,7 @@
 //= require handlebars/handlebars
 //= require ember/ember
 //= require ember-data/ember-data.prod
+//= require ember-pagination/ember-pagination
 //= require ember-validations-shiv/dist/ember-validations
 //= require cldr/plurals
 //= require ember-i18n/lib/i18n

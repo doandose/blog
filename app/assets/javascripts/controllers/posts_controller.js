@@ -1,12 +1,16 @@
-Blog.PostsIndexController = Ember.ArrayController.extend({
+Blog.PostsIndexController = Ember.ArrayController.extend(Ember.PaginationModule,{
     sortProperties: ['publishedAt'],
     sortAscending: false,
+    modelInfo: {
+        store: 'post',
+        class: Blog.Post
+    },
 
     postsPublisheds: function() {
         return this.filter(function(post) {
             return !Ember.isBlank(post.get('publishedAt'));
         });
-    }.property('@each.publishedAt').cacheable(),
+    }.property('@each.publishedAt'),
 });
 
 Blog.PostsShowController = Ember.ObjectController.extend(Blog.CommentableMixin, {

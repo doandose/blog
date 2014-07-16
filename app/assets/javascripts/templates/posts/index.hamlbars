@@ -1,3 +1,5 @@
 %ul.posts
   = hb 'each post in postsPublisheds' do
     = hb "post-details post=post"
+
+%a{ :_action => 'showMore' } Mostrar mais
