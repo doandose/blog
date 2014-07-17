@@ -11,39 +11,36 @@ Blog.PaginationLinksComponent = Ember.Component.extend({
 
 	lastPage: Ember.computed.alias('pages'),
 
-	visiblePages: function(){
+	visiblePages: (function() {
+		var finish, limit, page, pages, start, _i, _ref, _results;
 		pages = this.get('pages');
 		page = this.get('page');
-		limit = 5
-		if (pages < 5){
-			limit = pages	
+		limit = 5;
+		if (pages < 5) {
+			limit = pages;
 		}
-		finish = function(start, limit){
-			start + limit -1
+		finish = function(start, limit) {
+			return start + limit - 1;
+		};
+		start = page - parseInt(limit / 2);
+		if (finish(start, limit) > pages) {
+			start = pages - limit + 1;
 		}
-
-		start = page - parseInt(limit / 2)
-		if (finish(start,limit) > pages){
-			start = pages - limit;
+		if (start < 1) {
+			start = 1;
 		}
-
-		if (start < 1){
-			start = 1
-		}
-		var _i, _ref, _results;
-
-		(function() {
-		  _results = [];
-		  for (var _i = start, _ref = finish(start, limit); start <= _ref ? _i <= _ref : _i >= _ref; start <= _ref ? _i++ : _i--){ _results.push(_i); }
-		  return _results;
+		return (function() {
+			_results = [];
+			for (var _i = start, _ref = finish(start, limit); start <= _ref ? _i <= _ref : _i >= _ref; start <= _ref ? _i++ : _i--){ _results.push(_i); }
+			return _results;
 		}).apply(this);
-	}.property('page', 'pages'),
+	}).property('page', 'pages'),
 
-	showBeforeElipsis: function() {
+	showBeforeEllipsis: function() {
 		return this.get('visiblePages.firstObject') > 3;
 	}.property('visiblePages.[]'),
 
-	showAfterElipsis: function() {
+	showAfterEllipsis: function() {
 		return Math.abs(this.get('lastPage') - this.get('visiblePages.lastObject')) > 2;
 	}.property('visiblePages.[]', 'lastPage'),
 
