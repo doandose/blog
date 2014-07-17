@@ -4,7 +4,7 @@ Blog.PaginatableMixin = Ember.Mixin.create({
         if (this.get('content.length') % this.get('perPage') > 0){
             ++result    
         }
-        result;
+        return result;
     }.property('content.[]', 'perPage'),
 
     paginatedContent: function(){
@@ -12,6 +12,6 @@ Blog.PaginatableMixin = Ember.Mixin.create({
         perPage = this.get('perPage');
         start = (page - 1) * perPage;
         end = page * perPage;
-        this.get('arrangedContent').slice(start, end)
+        return this.get('arrangedContent').slice(start, end)
     }.property('arrangedContent.[]', 'page', 'perPage')
 })
