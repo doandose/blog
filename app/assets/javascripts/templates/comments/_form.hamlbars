@@ -1,4 +1,6 @@
 %section{ bind: { class: "category.dominantColor :post_comment_form" }}
+  %h1= hb "t labels.commentCreate"
+
   .message= hb 'message'
 
   = hb "form-for controller class='comment_form'" do

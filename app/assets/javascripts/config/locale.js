@@ -16,7 +16,8 @@ Em.I18n.translations = {
         labels: {
             name: 'Nome',
             email: 'E-mail',
-            body: 'Mensagem'
+            body: 'Mensagem',
+            commentCreate: 'Deixe seu comentário'
         },
 
         buttons: {
