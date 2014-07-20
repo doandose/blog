@@ -1,0 +1,49 @@
+form
+  textarea, input[type=text], input[type=email], input[type=submit]
+    outline: none
+
+  label
+    color: #fff
+    display: block
+    margin-bottom: 4em / $default-size
+
+  .fieldWithErrors
+    label
+      color: $pomegranate
+
+    textarea, input[type=text], input[type=email]
+      border: 1px solid $pomegranate
+
+  textarea, input[type=text], input[type=email]
+    +border-radius(8em / $default-size)
+    border: 1px solid $silver
+    padding: $default-padding
+    width: 100%
+
+  input[type=text], input[type=email]
+    height: 30em / $default-size
+
+  textarea
+    height: 200em / $default-size !important
+
+  .input
+    margin-top: 15em / $default-size
+    position: relative
+
+  .actions
+    margin-top: 20em / $default-size
+
+    input[type=submit][disabled=disabled]
+      +opacity(0.3)
+
+    input[type=submit]
+      +border-radius(8em / $default-size)
+      background: $green_sea
+      border: none
+      color: #fff
+      font-size: 14em / $default-size
+      padding: $default-padding 0
+      width: 220em / $default-size
+
+    input[type=submit]:not([disabled]):active
+      background: darken($green_sea, 10%)

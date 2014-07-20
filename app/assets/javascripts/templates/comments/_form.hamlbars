@@ -1,18 +1,10 @@
-%section{ bind: { class: "category.dominantColor :post_form" }}
-  %form
-    %section.info
-      = hb 'message'
+%section{ bind: { class: "category.dominantColor :post_comment_form" }}
+  .message= hb 'message'
 
-    %section.inputs
-      %label= hb 't labels.name'
-      = hb "view Blog.TextFields valueBinding='name'"
-      =# hb "input valueBinding='name", { bind: { placeholder: "t label.name" }}
+  = hb "form-for controller class='comment_form'" do
+    = hb "input name labelTranslation='labels.name'"
+    = hb "input email as='email' labelTranslation='labels.email'"
+    = hb "input text as='text' labelTranslation='labels.body'"
 
-      %label= hb 't labels.email'
-      = hb "input type='email' valueBinding='email'"
-
-      %label= hb 't labels.body'
-      = hb "textarea valueBinding='text'"
-
-    %section.actions
-      %a{ :_action => 'createComment' }= hb 't buttons.submit'
+    .actions
+      = hb "submit class='success'"

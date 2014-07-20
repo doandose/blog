@@ -22,6 +22,7 @@
         "moment": "~2.7.0",
         "js-md5": "~1.1.0",
         "ember-validations-shiv": "~1.0.0-beta.2",
+        "ember-easyForm-shim": "*",
         "ember-i18n": "~2.0.0",
         "marked": "",
         "rainbow": ""

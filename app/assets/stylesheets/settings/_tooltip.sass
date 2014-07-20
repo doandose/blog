@@ -1,0 +1,26 @@
+$background-color: rgba(255, 255, 255, 0.66)
+
+span.error
+  +border-radius(8em / $default-size)
+  background: $pomegranate
+  color: #fff
+  font-size: 11em / $default-size
+  height: 20em / $default-size
+  left: 110%
+  margin-top: -1 * $default-padding
+  padding: $default-padding
+  position: absolute
+  text-align: center
+  top: 56%
+  width: 191em / $default-size
+
+  &:before
+    border-bottom: (10em / $default-size) solid transparent
+    border-right: (10em / $default-size) solid $pomegranate
+    border-top: (10em / $default-size) solid transparent
+    content: " "
+    height: 0
+    position: absolute
+    right: 100%
+    top: 11em / $default-size
+    width: 0
