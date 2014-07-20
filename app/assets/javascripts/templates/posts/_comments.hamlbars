@@ -1,12 +1,18 @@
-%section.comments
+%section.post_comments
+  %h3{ bind: { class: 'category.dominantColor' }}
+    = hb 't titles.comments'
+    %span{ bind: { class: 'category.dominantColor :badge' }}= hb 'commentsCount'
+
   = hb 'if hasComments' do
-    %h3
-      = hb 't titles.comments'
-      %span.badge= hb 'commentsCount'
 
     %ul
       = hb 'each comment in commentPublishedSorteds' do
         %li
           %img{ bind: { src: "comment.avatar" }}
-          = hb 'comment.email'
-          = hb 'comment.body'
+          .comment
+            %b= hb 'comment.email'
+            %p= hb 'comment.body'
+
+    = hb 'else'
+    %div{ bind: { class: 'category.dominantColor :empty' }}
+      = hb 't labels.commentEmpty'
