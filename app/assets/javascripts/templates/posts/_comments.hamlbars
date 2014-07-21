@@ -11,7 +11,7 @@
           %img{ bind: { src: "comment.avatar" }}
           .comment
             %b= hb 'comment.email'
-            %p= hb 'comment.body'
+            = hb "view Blog.MarkedView value=comment.body"
 
     = hb 'else'
     %div{ bind: { class: 'category.dominantColor :empty' }}

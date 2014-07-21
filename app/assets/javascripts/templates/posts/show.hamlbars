@@ -13,7 +13,7 @@
       %span.img
         %img{ bind: { src: 'author.avatar'}}
 
-  %section.post_body= hb! 'view.body'
+  %section.post_body= hb "view Blog.MarkedView value=body"
 
   = hb "partial 'posts/tags'"
   = hb "partial 'comments/form'"

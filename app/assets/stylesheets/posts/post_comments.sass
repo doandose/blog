@@ -5,37 +5,31 @@ section.post_comments
     +text-color(10%)
     padding-bottom: 2 * $default-padding
     span.badge
-      +background(0.7)
-      +border-radius(6em / $default-size)
-      color: #fff
-      float: right
-      font-size: 5em / $default-size
-      padding: $default-padding
-      text-align: center
+      @include badge
 
   ul
     +border-radius(5em / $default-size)
     +inline-block
     background: rgba(204, 204, 204, 0.26)
-    padding: (2 * $default-padding) 0
+    padding: (3 * $default-padding) 0
     width: 100%
     li
-      +inline-block
-      padding: 0 0 (3 * $default-padding) (3 * $default-padding)
+      +clearfix
+      border-bottom: 1px dashed #ccc
+      margin: 0 auto
+      padding: (3 * $default-padding) 0
       width: 90%
 
-  ul li
-    img
-      @include image-rounded(68em)
-      float: left
+      img
+        @include image-rounded(68em)
+        float: left
 
-    .comment
-      float: left
-      padding: $default-padding
+      .comment
+        float: left
+        padding: $default-padding
 
-      b
-        font-weight: bold
-        font-size: 16em / $default-size
-
-      p
-        padding-top: $default-padding
+        b
+          +inline-block
+          font-weight: bold
+          font-size: 16em / $default-size
+          padding-bottom: 2 * $default-padding
