@@ -5,7 +5,7 @@ header
     margin: 0 auto
     width: $max-width
     text-align: center
-    li
+    li.menu
       +inline-block
       a
         +inline-block
@@ -23,7 +23,13 @@ header
           color: lighten($primary-color, 30%)
           border-width: 0 0 $nav-border-size-active 0 !important
           padding: (2 * $default-padding) 0 ((2 * $default-padding) - ($nav-border-size-active - $nav-border-size-default)) 0
-          line-height: 14.5em / $default-size
+          line-height: 15.5em / $default-size
 
     li.home
-      width: 130em / $default-size
+      +inline-block
+      height: 64em / $default-size
+      width: 140em / $default-size
+      background: image-url('logo.png') no-repeat
+      background-size: 130em / $default-size
+      background-position: 0em (25em / $default-size)
+      text-indent: 9999em
