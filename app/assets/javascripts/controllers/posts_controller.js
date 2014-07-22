@@ -2,7 +2,7 @@ Blog.PostsIndexController = Ember.ArrayController.extend(Blog.PaginatableMixin, 
     sortProperties: ['publishedAt'],
     sortAscending: false,
     page: 1,
-    perPage: 2,
+    perPage: 10,
 
     postsPublisheds: function() {
         return this.filter(function(post) {

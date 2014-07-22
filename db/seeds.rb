@@ -14,7 +14,7 @@ end
 end
 
 # posts
-200.times do
+50.times do
   Post.create(
     published_at: [nil, DateTime.now + rand(99).minutes].sample,
     title:        Faker::Lorem.sentence(6),

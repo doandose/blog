@@ -1,0 +1,21 @@
+= hb 'if showPagination' do
+  %div{ class: 'pagination pagination-centered' }
+    %ul
+      %li{ bind: { class: 'hasPrevious::disabled'}}
+        %a{ :_action => 'goToPreviousPage'} &laquo;
+
+      = hb 'if showBeforeEllipsis' do
+        =hb 'pagination-page page=1 currentPage=page'
+        %li.disabled
+          %a &hellip;
+
+      = hb 'each pageNumber in visiblePages' do
+        =hb 'pagination-page page=pageNumber currentPage=page'
+
+      = hb 'if showAfterEllipsis' do
+        =hb 'pagination-page page=lastPage currentPage=page'
+        %li.disabled
+          %a &hellip;
+
+      %li{ bind: { class: 'hasNext::disabled'}}
+        %a{ :_action => 'goToNextPage'} &raquo;

@@ -1,6 +1,6 @@
 Blog.CategoriesShowController = Ember.ObjectController.extend(Blog.PaginatableMixin, {
 	page: 1,
-    perPage: 2,
+    perPage: 10,
     arrangedContent: function(){
 	    return Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
 	      sortProperties: ['publishedAt'],
