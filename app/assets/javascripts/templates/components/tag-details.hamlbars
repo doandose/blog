@@ -1,1 +1,1 @@
-= hb 'tag.name'
+%div{ bind: { class: 'dominantColor :tag' } }= hb 'tag.name'

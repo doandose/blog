@@ -10,13 +10,15 @@ Em.I18n.translations = {
         },
 
         titles: {
-            comments: 'Comentários'
+            comments: 'Veja o que andam falando deste post'
         },
 
         labels: {
             name: 'Nome',
             email: 'E-mail',
-            body: 'Mensagem'
+            body: 'Mensagem',
+            commentCreate: 'Deixe seu comentário',
+            commentEmpty: 'Seja o primeiro a deixar um comentário :D'
         },
 
         buttons: {
