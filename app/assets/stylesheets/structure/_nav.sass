@@ -1,21 +1,29 @@
 header
   background-color: $primary-color
-  border-bottom: (1em / $default-size) solid $primary-color
-
   nav
+    font-family: 'Karla', sans-serif
     margin: 0 auto
-    padding: 2 * $default-padding
     width: $max-width
     text-align: center
     li
-      display: inline-block
-      padding: $default-padding
+      +inline-block
+      a
+        +inline-block
+        +border-color
+        border-style: solid
+        border-width: 0 0 $nav-border-size-default 0
+        color: #fff
+        font-weight: bold
+        font-size: 18em / $default-size
+        padding: (2 * $default-padding) 0
+        width: 90em / $default-size
+        &:hover
+          color: lighten($primary-color, 30%)
+        &.active
+          color: lighten($primary-color, 30%)
+          border-width: 0 0 $nav-border-size-active 0 !important
+          padding: (2 * $default-padding) 0 ((2 * $default-padding) - ($nav-border-size-active - $nav-border-size-default)) 0
+          line-height: 14.5em / $default-size
 
-  a
-    color: #fff
-    font-weight: bold
-    font-size: 14em / $default-size
-    &:hover
-      color: lighten($primary-color, 30%)
-    &.active
-      text-decoration: underline
+    li.home
+      width: 97em / $default-size

@@ -1,5 +1,5 @@
 = hb "link-to 'posts.show' post" do
-  %h3
+  %h2{ bind: { class: 'post.category.dominantColor' } }
     = hb 'post.title'
   %span.badge= hb 'post.formattedDate'
 
