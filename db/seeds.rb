@@ -4,21 +4,22 @@
 end
 
 # categories
-10.times do
-  Category.create(title: Faker::Lorem.sentence(2, true, 1))
+colors = %w(pomegranate alizarin nephritis silver wisteria belize_hole orange)
+6.times do
+  Category.create(title: Faker::Lorem.word, dominant_color: colors.sample)
 end
 
 # tags
 10.times do
-  Tag.create(name: Faker::Lorem.sentence(6))
+  Tag.create(name: Faker::Lorem.word)
 end
 
 # posts
-10.times do
+100.times do
   Post.create(
-    published_at: [nil, DateTime.now].sample,
+    published_at: [nil, DateTime.now + rand(99).minutes].sample,
     title:        Faker::Lorem.sentence(6),
-    description:        Faker::Lorem.sentence(19),
+    description:  Faker::Lorem.sentence(19),
     body:         Faker::Lorem.paragraph(200),
     author:       Author.all.sample,
     category:     Category.unscoped.sample,

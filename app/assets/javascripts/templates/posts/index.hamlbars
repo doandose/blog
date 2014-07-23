@@ -1,3 +1,5 @@
 %ul.posts
-  = hb 'each post in postsPublisheds' do
+  = hb 'each post in paginatedContent' do
     = hb "post-details post=post"
+
+= hb 'pagination-links page=page pages=pages'

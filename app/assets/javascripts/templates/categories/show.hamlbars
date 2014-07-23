@@ -2,5 +2,7 @@
   = hb 'title'
 
 %ul.posts
-  = hb 'each post in posts' do
+  = hb 'each post in paginatedContent' do
     = hb "post-details post=post"
+
+= hb 'pagination-links page=page pages=pages'
