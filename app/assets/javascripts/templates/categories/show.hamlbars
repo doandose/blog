@@ -1,6 +1,8 @@
-%h1.category
-  = hb 'title'
+%section.category_show
+  %section{ bind: { class: 'dominantColor :title' } }
+    %h1
+      = hb 'title'
 
-%ul.posts
-  = hb 'each post in posts' do
-    = hb "post-details post=post"
+  %ul.posts
+    = hb 'each post in posts' do
+      = hb "post-details post=post"

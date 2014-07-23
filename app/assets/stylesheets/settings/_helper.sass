@@ -19,3 +19,13 @@
   font-size: 5em / $default-size
   padding: $default-padding
   text-align: center
+
+@mixin tags
+  +inline-block
+
+  ul.tags li
+    float: left
+    padding: $default-padding $default-padding $default-padding 0
+
+    .tag
+      @include badge

@@ -5,7 +5,7 @@ header
     margin: 0 auto
     width: $max-width
     text-align: center
-    li.menu
+    ul.menu  li.menu_item
       +inline-block
       a
         +inline-block
@@ -26,6 +26,9 @@ header
           line-height: 15.5em / $default-size
 
     li.home
+      +inline-block
+
+    li.home > a
       +inline-block
       height: 64em / $default-size
       width: 140em / $default-size

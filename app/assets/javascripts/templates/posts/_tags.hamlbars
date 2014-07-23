@@ -1,4 +1,2 @@
 %section.post_tags
-  %ul
-    = hb 'each tag in tagsFormatted' do
-      = hb "tag-details tag=tag dominantColor=category.dominantColor"
+  = hb "tag-details tags=tagsFormatted dominantColor=category.dominantColor"

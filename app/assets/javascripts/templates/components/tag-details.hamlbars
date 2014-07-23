@@ -1,1 +1,4 @@
-%div{ bind: { class: 'dominantColor :tag' } }= hb 'tag.name'
+%ul.tags
+  = hb 'each tag in tags' do
+    %li
+      %div{ bind: { class: 'dominantColor :tag' } }= hb 'tag.name'

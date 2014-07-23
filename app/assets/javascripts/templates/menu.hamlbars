@@ -1,10 +1,10 @@
 %nav
-  %ul
+  %ul.menu
     %li.home
       = hb "link-to 'posts'" do
         blog.doando.se
 
     = hb 'each category in categories' do
-      %li.menu
+      %li.menu_item
         = hb "link-to 'categories.show' category class=category.dominantColor" do
           = hb 'category.title'

@@ -3,4 +3,8 @@
     = hb 'post.title'
   %span.badge= hb 'post.formattedDate'
 
-  %p= hb 'post.description'
+  %p
+    = hb 'post.description'
+
+  %section.tags
+    = hb "tag-details tags=post.tagsFormatted dominantColor=post.category.dominantColor"
