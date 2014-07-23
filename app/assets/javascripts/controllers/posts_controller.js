@@ -1,14 +1,20 @@
 Blog.PostsIndexController = Ember.ArrayController.extend(Blog.PaginatableMixin, {
-    sortProperties: ['publishedAt'],
-    sortAscending: false,
     page: 1,
     perPage: 10,
 
-    postsPublisheds: function() {
-        return this.filter(function(post) {
+    arrangedContent: function(){
+        var posts = this.get('content')
+
+        posts = posts.filter(function(post) {
             return !Ember.isBlank(post.get('publishedAt'));
         });
-    }.property('@each.publishedAt').cacheable(),
+
+        return Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
+          sortProperties: ['publishedAt'],
+          sortAscending: false,
+          content: posts
+        });
+    }.property('content')
 });
 
 Blog.PostsShowController = Ember.ObjectController.extend(Blog.CommentableMixin, {
