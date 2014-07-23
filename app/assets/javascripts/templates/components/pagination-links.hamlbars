@@ -2,7 +2,7 @@
   %div{ class: 'pagination pagination-centered' }
     %ul
       %li{ bind: { class: 'hasPrevious::disabled'}}
-        %a{ :_action => 'goToPreviousPage'} &laquo;
+        %a{ :_action => 'goToPreviousPage'} &laquo anterior
 
       = hb 'if showBeforeEllipsis' do
         =hb 'pagination-page page=1 currentPage=page'
@@ -18,4 +18,4 @@
           %a &hellip;
 
       %li{ bind: { class: 'hasNext::disabled'}}
-        %a{ :_action => 'goToNextPage'} &raquo;
+        %a{ :_action => 'goToNextPage'} próxima &raquo
