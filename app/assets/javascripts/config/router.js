@@ -18,5 +18,13 @@ Blog.Router.map(function() {
         this.route('show', {
             path: '/:slug'
         })
+    }),
+
+    this.resource('admin', {
+        path: '/admin'
+    }, function() {
+        this.resource('categories', function() {
+            this.route('new')
+        })
     })
 })

@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.4'
 gem 'mysql2', '0.3.16'
+gem 'paperclip'
 gem 'active_model_serializers', '0.8.0'
 gem 'friendly_id', '5.0.0'
 

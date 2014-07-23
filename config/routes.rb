@@ -14,6 +14,10 @@ Blog::Application.routes.draw do
   constraints FormatTest.new(:html) do
     root to: 'application#index'
     get '*path' => 'application#index'
+
+    namespace :admin do
+      get '/' => 'application#index'
+    end
   end
 
   constraints FormatTest.new(:json) do

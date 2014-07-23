@@ -4,6 +4,7 @@ class CreateCategories < ActiveRecord::Migration
       t.string :title
       t.string :slug
       t.string :dominant_color
+      add_attachment :icon
       t.timestamp
     end
   end

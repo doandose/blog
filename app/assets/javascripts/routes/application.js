@@ -7,17 +7,26 @@ Blog.ApplicationRoute = Ember.Route.extend({
         });
     },
 
-    renderTemplate: function(controller, model) {
+    renderTemplate: function(controller, model, c) {
         this._super();
 
-        this.render('menu', {
-            into: 'application',
-            outlet: 'menu'
-        });
+        if (location.href.match(/admin/)) {
+            this.render('admin.application')
 
-        this.render('footer', {
-            into: 'application',
-            outlet: 'footer'
-        })
+            this.render('admin.menu', {
+                into: 'admin.application',
+                outlet: 'menu'
+            });
+        } else {
+            this.render('menu', {
+                into: 'application',
+                outlet: 'menu'
+            });
+
+            this.render('footer', {
+                into: 'application',
+                outlet: 'footer'
+            })
+        }
     }
 })
