@@ -11,11 +11,4 @@ Blog.Post = DS.Model.extend(Blog.DatableMixin, {
     comments: DS.hasMany('comment'),
     category: DS.belongsTo('category'),
     author: DS.belongsTo('author'),
-
-    tagsFormatted: function() {
-        return this.get('tags').map(function(tag) {
-            var formatted = '#' + tag.get('name');
-            return tag.set('name', formatted);
-        });
-    }.property('tags.@each.name').cacheable()
 })

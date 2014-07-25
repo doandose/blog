@@ -1,4 +1,4 @@
 %ul.tags
   = hb 'each tag in tags' do
     %li
-      %div{ bind: { class: 'dominantColor :tag' } }= hb 'tag.name'
+      %div{ bind: { class: 'dominantColor :tag' } }= hb 'tag.formatedName'

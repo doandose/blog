@@ -1,2 +1,2 @@
 %section.post_tags
-  = hb "tag-details tags=tagsFormatted dominantColor=category.dominantColor"
+  = hb "tag-details tags=tags dominantColor=category.dominantColor"

@@ -7,4 +7,4 @@
     = hb 'post.description'
 
   %section.tags
-    = hb "tag-details tags=post.tagsFormatted dominantColor=post.category.dominantColor"
+    = hb "tag-details tags=post.tags dominantColor=post.category.dominantColor"
