@@ -2,6 +2,7 @@
 //= require moment/min/moment-with-langs
 //= require js-md5/js/md5
 //= require handlebars/handlebars
+//= require spin.js/spin.js
 //= require ember/ember
 //= require ember-data/ember-data.prod
 //= require ember-validations-shiv/dist/ember-validations
@@ -26,4 +27,5 @@
 //= require_tree ./templates
 //= require_tree ./components
 
+//= require_tree ./routes/mixings
 //= require_tree ./routes

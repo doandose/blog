@@ -25,6 +25,7 @@
         "ember-easyForm-shim": "*",
         "ember-i18n": "~2.0.0",
         "marked": "",
-        "rainbow": ""
+        "rainbow": "",
+        "spin.js": ""
     }
 }

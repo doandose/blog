@@ -29,10 +29,4 @@ header
       +inline-block
 
     li.home > a
-      +inline-block
-      height: 64em / $default-size
-      width: 140em / $default-size
-      background: image-url('logo.png') no-repeat
-      background-size: 130em / $default-size
-      background-position: 0em (25em / $default-size)
-      text-indent: 9999em
+      @include logo

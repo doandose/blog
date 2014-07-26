@@ -18,6 +18,8 @@ gem 'dotenv-rails', '0.11.1'
 gem 'therubyracer', '0.12.1'
 gem 'puma', '2.8.2'
 
+gem 'skylight'
+
 group :development do
   gem 'faker', '1.3.0'
   gem 'capistrano', '3.2.0'
