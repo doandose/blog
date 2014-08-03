@@ -3,3 +3,39 @@
   border: (1em / $default-size) solid $text-color
   padding: (0.004em * $default-size)
   width: $size / $default-size
+
+@mixin box
+  +border-radius(5em / $default-size)
+  color: #fff
+  font-weight: bold
+  padding: $default-padding
+  text-align: center
+
+@mixin badge
+  +background(0.7)
+  +border-radius(6em / $default-size)
+  color: #fff
+  float: right
+  font-size: 5em / $default-size
+  padding: $default-padding
+  text-align: center
+
+@mixin tags
+  +inline-block
+
+  ul.tags li
+    float: left
+    padding: $default-padding $default-padding $default-padding 0
+
+    .tag
+      @include badge
+
+@mixin logo($width: 64em, $height: 64em)
+  +inline-block
+  height: $height / $default-size
+  width: ($width * 2) / $default-size
+  background: image-url('logo.png') no-repeat
+  background-size: ($width * 2) / $default-size
+  background-position: 0em (($width / 2.5) / $default-size)
+  text-indent: ($width * 2) / $default-size
+  overflow: hidden

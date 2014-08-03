@@ -16,11 +16,13 @@ ActiveRecord::Schema.define(version: 7) do
   create_table "authors", force: true do |t|
     t.string "name"
     t.string "email"
+    t.string "linkedin"
   end
 
   create_table "categories", force: true do |t|
     t.string "title"
     t.string "slug"
+    t.string "dominant_color"
   end
 
   create_table "comments", force: true do |t|

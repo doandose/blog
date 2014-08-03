@@ -1,0 +1,35 @@
+section.post_comments
+  padding: 3 * $default-padding !important
+
+  h3
+    +text-color(10%)
+    padding-bottom: 2 * $default-padding
+    span.badge
+      @include badge
+
+  ul
+    +border-radius(5em / $default-size)
+    +inline-block
+    background: rgba(204, 204, 204, 0.26)
+    padding: (3 * $default-padding) 0
+    width: 100%
+    li
+      +clearfix
+      border-bottom: 1px dashed #ccc
+      margin: 0 auto
+      padding: (3 * $default-padding) 0
+      width: 90%
+
+      img
+        @include image-rounded(68em)
+        float: left
+
+      .comment
+        float: left
+        padding: $default-padding
+
+        b
+          +inline-block
+          font-weight: bold
+          font-size: 16em / $default-size
+          padding-bottom: 2 * $default-padding

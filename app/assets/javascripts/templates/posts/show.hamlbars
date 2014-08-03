@@ -1,19 +1,20 @@
 %article.post_show
-  %section.post_header
-    %h1
-      = hb 'title'
-    %span.badge= hb 'formattedDate'
+  %section{ bind: { class: 'category.dominantColor :post_header' }}
+    .post_header
+      %h1
+        = hb 'title'
+      %span.badge= hb 'formattedDate'
 
-  %section.post_info
-    %span.info
-      %b= hb 'author.name'
-      %p= hb 'author.email'
+    .post_info
+      %a{ target: :blank, bind: { href: 'author.linkedin' }}
+        %b= hb 'author.name'
+        %p= hb 'author.email'
 
-    %span.img
-      %img{ bind: { src: 'author.avatar'}}
+      %span.img
+        %img{ bind: { src: 'author.avatar'}}
 
-  %section.post_body= hb! 'view.body'
+  %section.post_body= hb "view Blog.MarkedView value=body"
 
-= hb "partial 'posts/tags'"
-= hb "partial 'comments/form'"
-= hb "partial 'posts/comments'"
+  = hb "partial 'posts/tags'"
+  = hb "partial 'comments/form'"
+  = hb "partial 'posts/comments'"

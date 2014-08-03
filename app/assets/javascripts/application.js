@@ -2,9 +2,11 @@
 //= require moment/min/moment-with-langs
 //= require js-md5/js/md5
 //= require handlebars/handlebars
+//= require spin.js/spin.js
 //= require ember/ember
 //= require ember-data/ember-data.prod
 //= require ember-validations-shiv/dist/ember-validations
+//= require ember-easyForm-shim/dist/ember-easyForm
 //= require cldr/plurals
 //= require ember-i18n/lib/i18n
 //= require marked/lib/marked
@@ -25,4 +27,5 @@
 //= require_tree ./templates
 //= require_tree ./components
 
+//= require_tree ./routes/mixings
 //= require_tree ./routes

@@ -24,10 +24,7 @@ Blog.PostsShowController = Ember.ObjectController.extend(Blog.CommentableMixin, 
         return this.get('commentsCount') > 0;
     }.property('commentsCount'),
 
-    tagsFormatted: function() {
-        return this.get('tags').map(function(tag) {
-            var formatted = '#' + tag.get('name');
-            return tag.set('name', formatted);
-        });
-    }.property('tags.@each.name').cacheable(),
+    hasMessage: function() {
+        return !Ember.isBlank(this.get('message'));
+    }.property('message'),
 });

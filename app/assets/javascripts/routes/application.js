@@ -1,4 +1,4 @@
-Blog.ApplicationRoute = Ember.Route.extend({
+Blog.ApplicationRoute = Ember.Route.extend(Blog.LoadableMixin, {
     model: function() {
         return Ember.RSVP.hash({
             posts: this.store.findAll('post'),

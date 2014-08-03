@@ -10,5 +10,5 @@ Blog.Post = DS.Model.extend(Blog.DatableMixin, {
     tags: DS.hasMany('tag'),
     comments: DS.hasMany('comment'),
     category: DS.belongsTo('category'),
-    author: DS.belongsTo('author')
+    author: DS.belongsTo('author'),
 })

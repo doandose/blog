@@ -1,7 +1,7 @@
 class CategorySerializer < ActiveModel::Serializer
   embed :ids
 
-  attributes :id, :title, :slug
+  attributes :id, :title, :dominant_color, :slug
 
   has_many :posts
 end

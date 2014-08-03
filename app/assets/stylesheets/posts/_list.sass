@@ -2,22 +2,35 @@ ul.posts
   list-style: none
   margin: 0 auto
   width: $max-width
-  li
-    cursor: pointer
-    padding: (2 * $default-padding) $default-padding
-    background: #fff
-    margin-bottom: 10em / $default-size
 
-    a
-      color: $title-color
-      h3
-        padding: 0 $default-padding $default-padding 0
-        color: $primary-color
+ul.posts > li
+  +border-color(0.2)
+  border-style: solid
+  border-width: 0 0 (3em / $default-size) 0
+  cursor: pointer
+  padding: (7 * $default-padding)  (9 * $default-padding)
+  background: #fff
+  margin-bottom: 6em / $default-size
 
-      p
-        color: $text-color
-        font-size: 14em / $default-size
-        letter-spacing: 1.7em / $default-size
-        line-height: 18em / $default-size
-        padding: $default-padding 0 0 0
-        text-align: justify
+  a
+    color: $link-color
+
+    h2
+      +text-color(14%)
+      color: $primary-color
+      padding: 0 $default-padding $default-padding 0
+
+    span.badge
+      font-size: 14em / $default-size
+
+    p
+      color: $text-color
+      font-size: 17em / $default-size
+      letter-spacing: 1.9em / $default-size
+      line-height: 22em / $default-size
+      padding: (4 * $default-padding) 0 0 0
+      text-align: justify
+
+    section.tags
+      @include tags
+      padding-top: 2 * $default-padding
