@@ -29,3 +29,13 @@
 
     .tag
       @include badge
+
+@mixin logo($width: 64em, $height: 64em)
+  +inline-block
+  height: $height / $default-size
+  width: ($width * 2) / $default-size
+  background: image-url('logo.png') no-repeat
+  background-size: ($width * 2) / $default-size
+  background-position: 0em (($width / 2.5) / $default-size)
+  text-indent: ($width * 2) / $default-size
+  overflow: hidden
