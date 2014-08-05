@@ -46,6 +46,7 @@ Blog.PaginationLinksComponent = Ember.Component.extend({
 
 	actions: {
 		goToNextPage: function() {
+			console.log(this.get('hasNext'))
 			if (this.get('hasNext')) {
 				return this.incrementProperty('controller.page');
 			}
